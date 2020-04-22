@@ -1,9 +1,9 @@
 {
-    "name": "wordpress-project",
-    "version": "1.0.0",
-    "description": "WordPress project",
-    "author": "TGHP",
-    "devDependencies": {
-        "@tghp/gulppress": "^1.0.0"
-    }
+  "name": "wordpress-project",
+  "version": "1.0.0",
+  "description": "WordPress project",
+  "author": "TGHP",
+  "devDependencies": {
+    "@tghp/gulppress": "^1.0.0"
+  }
 }
