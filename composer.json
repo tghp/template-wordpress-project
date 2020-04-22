@@ -1,0 +1,41 @@
+{
+    "name": "tghp/wordpress-project",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://packages.metabox.io/0f8f7fc3bd035b4a4f17b480eaf0434b"
+        }
+    ],
+    "require": {
+        "johnpbloch/wordpress": "^5.4",
+        "tghp/wp-composer-clean": "1.0.0-RC2",
+        "vlucas/phpdotenv": "^4.1",
+        "wpackagist-plugin/meta-box": "^5.2",
+        "meta-box/meta-box-aio": "dev-master",
+        "wpackagist-plugin/woocommerce": "^4.0.1"
+    },
+    "config": {
+        "vendor-dir": "wp-content/vendor"
+    },
+    "extra": {
+        "wordpress-install-dir": "wp",
+        "installer-paths": {
+            "wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "wp-content/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        }
+    }
+}
+

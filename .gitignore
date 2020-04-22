@@ -1,0 +1,7 @@
+wp/*
+wp-content/*
+vendor/
+src/**/dist/**/*
+!.gitkeep
+.env
+.idea/
