@@ -4,6 +4,6 @@
     "description": "WordPress project",
     "author": "TGHP",
     "devDependencies": {
-        "@tghp/gulppress": "file:/Users/joshuadavenport/Projects/gulppress"
+        "@tghp/gulppress": "^1.0.0"
     }
 }
