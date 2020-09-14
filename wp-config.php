@@ -41,10 +41,20 @@ define( 'DB_PASSWORD', getenv('DB_PASSWORD') );
 define( 'DB_HOST', getenv('DB_HOST') );
 
 /** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8' );
+$charset = getenv('DB_CHARSET');
+if ($charset) {
+    define( 'DB_CHARSET', $charset );
+} else if ($charset !== '') {
+    define( 'DB_CHARSET', 'utf8' );
+}
 
 /** The Database Collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
+$collate = getenv('DB_COLLATE');
+if ($collate) {
+    define( 'DB_COLLATE', $collate );
+} else if ($collate !== '') {
+    define( 'DB_COLLATE', 'utf8' );
+}
 
 /**#@+
  * Authentication Unique Keys and Salts.
