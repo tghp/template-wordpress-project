@@ -109,9 +109,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Define wp-content directory
  */
 define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content');
-
-$port = ($_SERVER['SERVER_PORT'] == '80') ? '' : (':' . $_SERVER['SERVER_PORT']);
-define('WP_CONTENT_URL', '//' . $_SERVER['SERVER_NAME'] . $port . '/wp-content');
+define('WP_CONTENT_URL', getenv('WP_CONTENT_URL'));
 
 /** Sets up WordPress vars and included files. */
 require_once( ABSPATH . 'wp-settings.php' );
