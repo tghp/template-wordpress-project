@@ -17,7 +17,7 @@
     ],
     "require": {
         "johnpbloch/wordpress": "^5.4",
-        "tghp/wp-composer-clean": "1.0.0-RC2",
+        "tghp/wp-composer-clean": "^2.1.0",
         "vlucas/phpdotenv": "^4.1",
         "wpackagist-plugin/meta-box": "^5.2",
         "meta-box/meta-box-aio": "dev-master",
