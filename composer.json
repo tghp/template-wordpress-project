@@ -20,8 +20,7 @@
         "tghp/wp-composer-clean": "^2.1.0",
         "vlucas/phpdotenv": "^4.1",
         "wpackagist-plugin/meta-box": "^5.2",
-        "meta-box/meta-box-aio": "dev-master",
-        "wpackagist-plugin/woocommerce": "^4.0.1"
+        "meta-box/meta-box-aio": "dev-master"
     },
     "config": {
         "vendor-dir": "wp-content/vendor"
