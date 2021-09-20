@@ -1,5 +1,5 @@
 {
-    "name": "tghp/wordpress-project",
+    "name": "tghp/$tghp:lowerCaseHyphenated$-project",
     "type": "project",
     "repositories": [
         {
