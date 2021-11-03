@@ -12,7 +12,7 @@
         },
         {
             "type": "composer",
-            "url": "https://packages.metabox.io/0f8f7fc3bd035b4a4f17b480eaf0434b"
+            "url": "https://packages.metabox.io/<API_KEY>"
         }
     ],
     "require": {
