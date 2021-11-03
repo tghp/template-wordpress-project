@@ -98,10 +98,35 @@ $table_prefix = 'wp_';
  */
 define('WP_DEBUG', false);
 
+/**
+ * Security etc
+ */
 define('DISALLOW_FILE_MODS', true);
 define('DISALLOW_FILE_EDIT', true);
 define('AUTOMATIC_UPDATER_DISABLED', true);
 define('WP_AUTO_UPDATE_CORE', false);
+
+/**
+ * Define e-mail plugin constants
+ */
+define('SAR_FSMTP_USER', getenv('EMAIL_SMTP_USER'));
+define('SAR_FSMTP_PASSWORD', getenv('EMAIL_SMTP_PASSWORD'));
+define('SAR_FSMTP_HOST', getenv('EMAIL_SMTP_HOST'));
+define('SAR_FSMTP_PORT', intval(getenv('EMAIL_SMTP_PORT')));
+if (getenv('EMAIL_SMTP_ENCRYPTION')) {
+    define('SAR_FSMTP_ENCRYPTION', getenv('EMAIL_SMTP_ENCRYPTION'));
+}
+if (getenv('EMAIL_SMTP_FROM')) {
+    define('SAR_FSMTP_FROM', getenv('EMAIL_SMTP_FROM'));
+}
+if (getenv('EMAIL_SMTP_FROM_NAME')) {
+    define('SAR_FSMTP_FROM_NAME', getenv('EMAIL_SMTP_FROM_NAME'));
+}
+if (getenv('EMAIL_SMTP_ALLOW_INVALID_SSL')) {
+    define('SAR_FSMTP_ALLOW_INVALID_SSL', 'on');
+} else {
+    define('SAR_FSMTP_ALLOW_INVALID_SSL', 'off');
+}
 
 /* That's all, stop editing! Happy publishing. */
 
