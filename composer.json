@@ -16,10 +16,12 @@
         }
     ],
     "require": {
-        "johnpbloch/wordpress": "^5.4",
-        "tghp/wp-composer-clean": "^2.1.0",
-        "vlucas/phpdotenv": "^4.1",
-        "wpackagist-plugin/meta-box": "^5.2",
+        "johnpbloch/wordpress": "^5",
+        "tghp/wp-composer-clean": "^2.1",
+        "vlucas/phpdotenv": "^5",
+        "wpackagist-plugin/meta-box": "^5",
+        "wpackagist-plugin/wordfence": "^7",
+        "wpackagist-plugin/sar-friendly-smtp": "^1",
         "meta-box/meta-box-aio": "dev-master"
     },
     "config": {
