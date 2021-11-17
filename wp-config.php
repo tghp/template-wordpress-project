@@ -29,31 +29,31 @@ try {
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME',  $_ENV['DB_NAME'] );
+define('DB_NAME',  $_ENV['DB_NAME']);
 
 /** MySQL database username */
-define( 'DB_USER', $_ENV['DB_USER'] );
+define('DB_USER', $_ENV['DB_USER']);
 
 /** MySQL database password */
-define( 'DB_PASSWORD', $_ENV['DB_PASSWORD'] );
+define('DB_PASSWORD', $_ENV['DB_PASSWORD']);
 
 /** MySQL hostname */
-define( 'DB_HOST', $_ENV['DB_HOST'] );
+define('DB_HOST', $_ENV['DB_HOST']);
 
 /** Database Charset to use in creating database tables. */
 $charset = $_ENV['DB_CHARSET'];
 if ($charset) {
-    define( 'DB_CHARSET', $charset );
+    define('DB_CHARSET', $charset);
 } else if ($charset !== '') {
-    define( 'DB_CHARSET', 'utf8' );
+    define('DB_CHARSET', 'utf8');
 }
 
 /** The Database Collate type. Don't change this if in doubt. */
 $collate = $_ENV['DB_COLLATE'];
 if ($collate) {
-    define( 'DB_COLLATE', $collate );
+    define('DB_COLLATE', $collate);
 } else if ($collate !== '') {
-    define( 'DB_COLLATE', 'utf8' );
+    define('DB_COLLATE', 'utf8');
 }
 
 /**#@+
@@ -132,7 +132,7 @@ if ($_ENV['EMAIL_SMTP_ALLOW_INVALID_SSL']) {
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-    define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+    define('ABSPATH', dirname( __FILE__ ) . '/');
 }
 
 /**
