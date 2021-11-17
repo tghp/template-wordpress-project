@@ -1,5 +1,5 @@
 {
-    "name": "tghp/theme",
+    "name": "tghp/$tghp:lowerCaseHyphenated$",
     "type": "wordpress-theme",
     "version": "1.0.0"
 }
