@@ -29,19 +29,19 @@ try {
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME',  getenv('DB_NAME') );
+define( 'DB_NAME',  $_ENV['DB_NAME'] );
 
 /** MySQL database username */
-define( 'DB_USER', getenv('DB_USER') );
+define( 'DB_USER', $_ENV['DB_USER'] );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', getenv('DB_PASSWORD') );
+define( 'DB_PASSWORD', $_ENV['DB_PASSWORD'] );
 
 /** MySQL hostname */
-define( 'DB_HOST', getenv('DB_HOST') );
+define( 'DB_HOST', $_ENV['DB_HOST'] );
 
 /** Database Charset to use in creating database tables. */
-$charset = getenv('DB_CHARSET');
+$charset = $_ENV['DB_CHARSET'];
 if ($charset) {
     define( 'DB_CHARSET', $charset );
 } else if ($charset !== '') {
@@ -49,7 +49,7 @@ if ($charset) {
 }
 
 /** The Database Collate type. Don't change this if in doubt. */
-$collate = getenv('DB_COLLATE');
+$collate = $_ENV['DB_COLLATE'];
 if ($collate) {
     define( 'DB_COLLATE', $collate );
 } else if ($collate !== '') {
@@ -109,20 +109,20 @@ define('WP_AUTO_UPDATE_CORE', false);
 /**
  * Define e-mail plugin constants
  */
-define('SAR_FSMTP_USER', getenv('EMAIL_SMTP_USER'));
-define('SAR_FSMTP_PASSWORD', getenv('EMAIL_SMTP_PASSWORD'));
-define('SAR_FSMTP_HOST', getenv('EMAIL_SMTP_HOST'));
-define('SAR_FSMTP_PORT', intval(getenv('EMAIL_SMTP_PORT')));
-if (getenv('EMAIL_SMTP_ENCRYPTION')) {
-    define('SAR_FSMTP_ENCRYPTION', getenv('EMAIL_SMTP_ENCRYPTION'));
+define('SAR_FSMTP_USER', $_ENV['EMAIL_SMTP_USER']);
+define('SAR_FSMTP_PASSWORD', $_ENV['EMAIL_SMTP_PASSWORD']);
+define('SAR_FSMTP_HOST', $_ENV['EMAIL_SMTP_HOST']);
+define('SAR_FSMTP_PORT', intval($_ENV['EMAIL_SMTP_PORT']));
+if ($_ENV['EMAIL_SMTP_ENCRYPTION']) {
+    define('SAR_FSMTP_ENCRYPTION', $_ENV['EMAIL_SMTP_ENCRYPTION']);
 }
-if (getenv('EMAIL_SMTP_FROM')) {
-    define('SAR_FSMTP_FROM', getenv('EMAIL_SMTP_FROM'));
+if ($_ENV['EMAIL_SMTP_FROM']) {
+    define('SAR_FSMTP_FROM', $_ENV['EMAIL_SMTP_FROM']);
 }
-if (getenv('EMAIL_SMTP_FROM_NAME')) {
-    define('SAR_FSMTP_FROM_NAME', getenv('EMAIL_SMTP_FROM_NAME'));
+if ($_ENV['EMAIL_SMTP_FROM_NAME']) {
+    define('SAR_FSMTP_FROM_NAME', $_ENV['EMAIL_SMTP_FROM_NAME']);
 }
-if (getenv('EMAIL_SMTP_ALLOW_INVALID_SSL')) {
+if ($_ENV['EMAIL_SMTP_ALLOW_INVALID_SSL']) {
     define('SAR_FSMTP_ALLOW_INVALID_SSL', 'on');
 } else {
     define('SAR_FSMTP_ALLOW_INVALID_SSL', 'off');
@@ -139,7 +139,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Define wp-content directory
  */
 define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content');
-define('WP_CONTENT_URL', getenv('WP_CONTENT_URL'));
+define('WP_CONTENT_URL', $_ENV['WP_CONTENT_URL']);
 
 if(isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) === 'https') {
     $_SERVER['HTTPS'] = 'on';
