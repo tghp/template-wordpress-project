@@ -1,5 +1,6 @@
 <?php
 // Define constants
+define('TGHP_$tghp:upperCaseUnderscored$_THEME_NAME', '$tghp:lowerCaseHyphenated$-theme');
 define('TGHP_$tghp:upperCaseUnderscored$_THEME_ABSPATH', dirname(__FILE__) . '/');
 
 // Include the main $tghp:classCase$ class.

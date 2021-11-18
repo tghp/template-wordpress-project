@@ -62,4 +62,24 @@ class $tghp:classCase$
         }
     }
 
+    /**
+     * Get plugin name
+     *
+     * @return string
+     */
+    public static function getThemeName(): string
+    {
+        return constant('TGHP_$tghp:upperCaseUnderscored$_THEME_NAME');
+    }
+
+   /**
+    * Get text domain
+    *
+    * @return string
+    */
+    public static function getTextDomain(): string
+    {
+        return self::getThemeName();
+    }
+
 }
