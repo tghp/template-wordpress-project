@@ -139,7 +139,7 @@ if (isset($_ENV['EMAIL_SMTP_ALLOW_INVALID_SSL'])) {
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined( 'ABSPATH')) {
     define('ABSPATH', dirname( __FILE__ ) . '/');
 }
 
@@ -154,4 +154,4 @@ if(isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strtolower($_SERVER['HTTP_X_FORW
 }
 
 /** Sets up WordPress vars and included files. */
-require_once( ABSPATH . 'wp-settings.php' );
+require_once(ABSPATH . 'wp-settings.php');
