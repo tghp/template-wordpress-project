@@ -109,20 +109,28 @@ define('WP_AUTO_UPDATE_CORE', false);
 /**
  * Define e-mail plugin constants
  */
-define('SAR_FSMTP_USER', $_ENV['EMAIL_SMTP_USER']);
-define('SAR_FSMTP_PASSWORD', $_ENV['EMAIL_SMTP_PASSWORD']);
-define('SAR_FSMTP_HOST', $_ENV['EMAIL_SMTP_HOST']);
-define('SAR_FSMTP_PORT', intval($_ENV['EMAIL_SMTP_PORT']));
-if ($_ENV['EMAIL_SMTP_ENCRYPTION']) {
+if (isset($_ENV['EMAIL_SMTP_USER'])) {
+    define('SAR_FSMTP_USER', $_ENV['EMAIL_SMTP_USER']);
+}
+if (isset($_ENV['EMAIL_SMTP_PASSWORD'])) {
+    define('SAR_FSMTP_PASSWORD', $_ENV['EMAIL_SMTP_PASSWORD']);
+}
+if (isset($_ENV['EMAIL_SMTP_HOST'])) {
+    define('SAR_FSMTP_HOST', $_ENV['EMAIL_SMTP_HOST']);
+}
+if (isset($_ENV['EMAIL_SMTP_PORT'])) {
+    define('SAR_FSMTP_PORT', intval($_ENV['EMAIL_SMTP_PORT']));
+}
+if (isset($_ENV['EMAIL_SMTP_ENCRYPTION'])) {
     define('SAR_FSMTP_ENCRYPTION', $_ENV['EMAIL_SMTP_ENCRYPTION']);
 }
-if ($_ENV['EMAIL_SMTP_FROM']) {
+if (isset($_ENV['EMAIL_SMTP_FROM'])) {
     define('SAR_FSMTP_FROM', $_ENV['EMAIL_SMTP_FROM']);
 }
-if ($_ENV['EMAIL_SMTP_FROM_NAME']) {
+if (isset($_ENV['EMAIL_SMTP_FROM_NAME'])) {
     define('SAR_FSMTP_FROM_NAME', $_ENV['EMAIL_SMTP_FROM_NAME']);
 }
-if ($_ENV['EMAIL_SMTP_ALLOW_INVALID_SSL']) {
+if (isset($_ENV['EMAIL_SMTP_ALLOW_INVALID_SSL'])) {
     define('SAR_FSMTP_ALLOW_INVALID_SSL', 'on');
 } else {
     define('SAR_FSMTP_ALLOW_INVALID_SSL', 'off');
