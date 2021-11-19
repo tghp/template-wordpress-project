@@ -18,7 +18,7 @@ class Blocks extends AbstractDefinesMetabox
     public function __construct($tghp:classCase$ $$tghp:camelCase$)
     {
         parent::__construct($$tghp:camelCase$);
-        add_filter('block_categories', [$this, 'addGutenbergBlockCategories'], 10, 2);
+        add_filter('block_categories_all', [$this, 'addGutenbergBlockCategories'], 10, 2);
     }
 
     protected function _getDefiners()
