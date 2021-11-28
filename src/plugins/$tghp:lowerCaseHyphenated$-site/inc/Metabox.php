@@ -2,16 +2,8 @@
 
 namespace TGHP\$tghp:classCase$;
 
-use TGHP\$tghp:classCase$\Metabox\Category;
-use TGHP\$tghp:classCase$\Metabox\CaseStudy;
-use TGHP\$tghp:classCase$\Metabox\Team;
-use TGHP\$tghp:classCase$\Metabox\Post;
-use TGHP\$tghp:classCase$\Metabox\Page;
-use TGHP\$tghp:classCase$\Metabox\User;
-use TGHP\$tghp:classCase$\Metabox\Home;
 use TGHP\$tghp:classCase$\Metabox\MetaboxDefinerInterface;
 use TGHP\$tghp:classCase$\Metabox\MetaboxPreparerInterface;
-use TGHP\$tghp:classCase$\Metabox\Settings;
 
 class Metabox extends AbstractDefinesMetabox
 {
