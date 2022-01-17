@@ -54,6 +54,55 @@ class Metabox extends AbstractDefinesMetabox
     }
 
     /**
+     * Generate metabox key if it looks like it hasn't already been generated
+     *
+     * @param $key
+     * @return string
+     */
+    public static function maybeGenerateKey($key)
+    {
+        if (!preg_match('/^' . self::getPrefix() . '/', $key)) {
+            return self::generateKey($key);
+        }
+
+        return $key;
+    }
+
+    /**
+     * Remove metabox prefix from key or array of keys
+     *
+     * @param array|string $fields
+     * @param string $prefix
+     * @return array
+     */
+    public static function removePrefixFromKey($fields): array
+    {
+        $returnFirst = false;
+
+        if(!is_array($fields)) {
+            $returnFirst = true;
+        }
+
+        $updatedFields = [];
+
+        if (!empty($fields)) {
+            if ($returnFirst) {
+                return str_replace(self::getPrefix(), '', $fields);
+            } else {
+                foreach ($fields as $key => $field) {
+                    if (is_array($field)) {
+                        $updatedFields[$key] = self::removePrefixFromKey($field);
+                    } else {
+                        $updatedFields[str_replace(self::getPrefix(), '', $key)] = $field;
+                    }
+                }
+            }
+        }
+
+        return $updatedFields;
+    }
+
+    /**
      * Enable required metabox extensions
      *
      * @param array $extensions
@@ -114,13 +163,13 @@ class Metabox extends AbstractDefinesMetabox
      * @param null $postId
      * @return array
      */
-    public function getMultipleMetafieldValues(array $field_ids, array $args = [], $postId = null)
+    public function getMultipleMetafieldValues(array $fieldIds, array $args = [], $postId = null)
     {
         $values = [];
 
         foreach ($field_ids as $field) {
             $key = $field;
-            $value = rwmb_meta($key, $args, $postId);
+            $value = rwmb_meta(self::maybeGenerateKey($key), $args, $postId);
             $values[$key] = !empty($value) ? $value : false;
         }
 
@@ -133,10 +182,10 @@ class Metabox extends AbstractDefinesMetabox
      * @param string $field_id
      * @return mixed
      */
-    public function getSingleMetafieldValueFromOptions(string $field_id)
+    public function getSingleMetafieldValueFromOptions(string $fieldId)
     {
         return rwmb_meta(
-            $field_id,
+            $fieldId,
             ['object_type' => 'setting'],
             'site_options'
         );
@@ -148,43 +197,12 @@ class Metabox extends AbstractDefinesMetabox
      * @param array $field_ids
      * @return mixed
      */
-    public function getMultipleMetafieldValueFromOptions(array $field_ids)
+    public function getMultipleMetafieldValueFromOptions(array $fieldIds)
     {
         return $this->getMultipleMetafieldValues(
-            $field_ids,
+            $fieldIds,
             ['object_type' => 'setting'],
             'site_options'
         );
-    }
-
-    /**
-     * Remove metabox prefix from each array key
-     *
-     * @param array $fields
-     * @param string $prefix
-     * @return array
-     */
-    public function removePrefixFromKey(array $fields, string $prefix): array
-    {
-        if(!is_array($fields)) {
-            return $fields;
-        }
-
-        $metaboxPrefix = $prefix . '_';
-
-        $updatedFields = [];
-
-        if (!empty($fields)) {
-            foreach ($fields as $key => $field) {
-                if (is_array($field)) {
-                    $updatedFields[$key] = $this->removePrefixFromKey($field, $prefix);
-                } else {
-                    $newKey = str_replace($metaboxPrefix, '', $key);
-                    $updatedFields[$newKey] = $field;
-                }
-            }
-        }
-
-        return $updatedFields;
     }
 }

@@ -22,6 +22,13 @@ abstract class AbstractTaxonomy extends Abstract$tghp:classCase$ implements Taxo
     protected $disableGutenberg = false;
 
     /**
+     * Post type for the taxonomy
+     *
+     * @var null|string
+     */
+    protected $postTypeCode = null;
+
+    /**
      * AbstractTaxonomy constructor.
      *
      * @param $tghp:classCase$ $$tghp:camelCase$

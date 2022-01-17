@@ -14,7 +14,12 @@ class Theme extends Abstract$tghp:classCase$
         parent::__construct($$tghp:camelCase$);
         add_action('after_setup_theme', [$this, 'setup']);
         add_action('wp_enqueue_scripts', [$this, 'enqueueStyles']);
+        add_filter('script_loader_tag', [$this, 'deferJsScripts'], 10, 1);
         add_action('init', [$this, 'addImageSizes']);
+        remove_action('wp_head', 'print_emoji_detection_script', 7);
+        remove_action('wp_print_styles', 'print_emoji_styles');
+        remove_action('admin_print_scripts', 'print_emoji_detection_script');
+        remove_action('admin_print_styles', 'print_emoji_styles');
     }
 
     /**
@@ -61,10 +66,36 @@ class Theme extends Abstract$tghp:classCase$
 
         wp_enqueue_script(
             '$tghp:lowerCaseHyphenated$',
-            get_stylesheet_directory_uri() . '/assets/dist/js/$tghp:lowerCaseHyphenated$.js',
+            get_stylesheet_directory_uri() . '/assets/dist/js/main.js',
             [],
-            filemtime(get_stylesheet_directory() . '/assets/dist/js/$tghp:lowerCaseHyphenated$.js')
+            filemtime(get_stylesheet_directory() . '/assets/dist/js/main.js')
         );
+    }
+
+    /**
+     * Parse scripts enqueue and defer those with flags
+     *
+     * @param $url
+     */
+    public function deferJsScripts($script)
+    {
+        if (is_admin()) {
+            return $script;
+        }
+
+        if (strpos($script, '.js') === false) {
+            return $script;
+        }
+
+        if (strpos($script, '#defer') !== false) {
+            return str_replace(' src', ' defer src', $script);
+        }
+
+        if (strpos($script, '#async') !== false) {
+            return str_replace(' src', ' async src', $script);
+        }
+
+        return $script;
     }
 
     /**

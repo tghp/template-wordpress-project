@@ -6,7 +6,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class() ?>>
-  <header>
+  <header class="site-header">
     <a href="<?php echo esc_url(home_url('/')) ?>" title="<?php echo esc_html(get_bloginfo('name')) ?>" rel="home">
       <?php echo esc_html(get_bloginfo('name')) ?>
     </a>
