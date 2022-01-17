@@ -41,18 +41,16 @@ define('DB_PASSWORD', $_ENV['DB_PASSWORD']);
 define('DB_HOST', $_ENV['DB_HOST']);
 
 /** Database Charset to use in creating database tables. */
-$charset = $_ENV['DB_CHARSET'];
-if ($charset) {
-    define('DB_CHARSET', $charset);
-} else if ($charset !== '') {
+if (isset($_ENV['DB_CHARSET'])) {
+    define('DB_CHARSET', $_ENV['DB_CHARSET']);
+} else {
     define('DB_CHARSET', 'utf8');
 }
 
 /** The Database Collate type. Don't change this if in doubt. */
-$collate = $_ENV['DB_COLLATE'];
-if ($collate) {
-    define('DB_COLLATE', $collate);
-} else if ($collate !== '') {
+if (isset($_ENV['DB_COLLATE'])) {
+    define('DB_COLLATE', $_ENV['DB_COLLATE']);
+} else {
     define('DB_COLLATE', 'utf8');
 }
 
