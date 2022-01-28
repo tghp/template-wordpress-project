@@ -1,7 +1,7 @@
 wp/*
 wp-content/*
 vendor/
-src/themes/dist/**/*
+src/themes/**/dist/**/*
 !.gitkeep
 .env
 .idea/
