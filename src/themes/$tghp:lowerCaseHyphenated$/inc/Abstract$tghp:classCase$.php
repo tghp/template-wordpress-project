@@ -7,7 +7,7 @@ abstract class Abstract$tghp:classCase$
     /**
      * @var $tghp:classCase$
      */
-    protected $f$tghp:camelCase$;
+    protected $$tghp:camelCase$;
 
     /**
      * Abstract$tghp:classCase$ constructor.
@@ -17,6 +17,6 @@ abstract class Abstract$tghp:classCase$
     public function __construct(
         $tghp:classCase$ $$tghp:camelCase$
     ) {
-        $this->$tghp:camelCase$ = $$tghp:classCasecamelCase
+        $this->$tghp:camelCase$ = $$tghp:camelCase$;
     }
 }
