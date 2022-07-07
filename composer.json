@@ -21,7 +21,6 @@
         "vlucas/phpdotenv": "^5",
         "wpackagist-plugin/meta-box": "^5",
         "wpackagist-plugin/wordfence": "^7",
-        "wpackagist-plugin/apocalypse-meow": "^21",
         "wpackagist-plugin/sar-friendly-smtp": "^1",
         "wpackagist-plugin/svg-support": "^2.3",
         "meta-box/meta-box-aio": "dev-master",
