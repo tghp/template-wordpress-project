@@ -50,8 +50,8 @@ class Theme extends Abstract$tghp:classCase$
          * This theme uses wp_nav_menu() in one location.
          */
         register_nav_menus([
-            'header-nav' => esc_html__('Main navigation', \TGHP\$tghp:classCase$Theme\$tghp:classCase$Theme::getTextDomain()),
-            'footer-nav' => esc_html__('Footer navigation', \TGHP\$tghp:classCase$Theme\$tghp:classCase$Theme::getTextDomain()),
+            'header-nav' => esc_html__('Main navigation', \TGHP\$tghp:classCase$Theme\$tghp:classCase$::getTextDomain()),
+            'footer-nav' => esc_html__('Footer navigation', \TGHP\$tghp:classCase$Theme\$tghp:classCase$::getTextDomain()),
         ]);
     }
 
