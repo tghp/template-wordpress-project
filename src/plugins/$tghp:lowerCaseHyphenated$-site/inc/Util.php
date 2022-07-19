@@ -8,6 +8,18 @@ use PHPHtmlParser\Dom\Node\AbstractNode;
 class Util extends Abstract$tghp:classCase$
 {
 
+    public function formatPathForEnvironments($path)
+    {
+        if (isset($_SERVER['KINSTA_CACHE_ZONE']) || isset($_SERVER['HTTP_X_KINSTA_EDGE_INCOMINGIP'])) {
+            $kinstaPathPattern = '#/www/[^/]*/releases/[^/]*/#';
+            if (preg_match($kinstaPathPattern, $path)) {
+                $path = preg_replace('#/www/[^/]*/releases/[^/]*/#', '', $path);
+            }
+        }
+
+        return $path;
+    }
+
     public function getAttachmentSizesSrcset($attachment_id, $sizes)
     {
         $attachmentMeta = wp_get_attachment_metadata($attachment_id);

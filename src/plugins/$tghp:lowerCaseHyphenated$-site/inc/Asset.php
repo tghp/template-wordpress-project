@@ -26,6 +26,7 @@ class Asset extends AbstractInheritingThemeFile
         }
 
         if ($path = $this->locate($path)) {
+            $path = $this->$tghp:camelCase$->util->formatPathForEnvironments($path);
             $assetContents = file_get_contents($path);
 
             $filetype = mime_content_type($path);
