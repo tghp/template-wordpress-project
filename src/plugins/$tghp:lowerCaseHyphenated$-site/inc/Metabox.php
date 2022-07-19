@@ -152,7 +152,11 @@ class Metabox extends AbstractDefinesMetabox
      */
     public function getSingleMetafieldValue(string $field_id, array $args = [], $postId = null)
     {
-        return rwmb_meta($field_id, $args, $postId);
+        if (preg_match('/^".*"$/', $field_id)) {
+            $field_id = preg_replace('/^"(.*)"$/', '$1', $field_id);
+        }
+
+        return rwmb_meta(self::maybeGenerateKey($field_id), $args, $postId);
     }
 
     /**
@@ -169,7 +173,7 @@ class Metabox extends AbstractDefinesMetabox
 
         foreach ($field_ids as $field) {
             $key = $field;
-            $value = rwmb_meta(self::maybeGenerateKey($key), $args, $postId);
+            $value = $this->getSingleMetafieldValue($key, $args, $postId);
             $values[$key] = !empty($value) ? $value : false;
         }
 
