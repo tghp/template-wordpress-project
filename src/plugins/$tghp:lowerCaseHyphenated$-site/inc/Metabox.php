@@ -19,7 +19,6 @@ class Metabox extends AbstractDefinesMetabox
 
         add_filter('mb_aio_extensions', [$this, 'enableExtensions'], 10, 1);
         add_filter('mb_aio_show_settings', '__return_false');
-        add_action('rwmb_enqueue_scripts', [$this, 'addAdminStyles']);
     }
 
     /**
@@ -125,21 +124,6 @@ class Metabox extends AbstractDefinesMetabox
         ];
 
         return $extensions;
-    }
-
-    /**
-     * Add admin styles
-     */
-    public function addAdminStyles()
-    {
-        if (is_admin()) {
-            wp_enqueue_style(
-                'meta-box-style',
-                $tghp:classCase$::getPluginUrl() . '/assets/src/css/metabox.css',
-                [],
-                filemtime($tghp:classCase$::getPluginPath() . '/assets/src/css/metabox.css')
-            );
-        }
     }
 
     /**
