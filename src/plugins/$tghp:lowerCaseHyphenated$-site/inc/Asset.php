@@ -51,4 +51,65 @@ class Asset extends AbstractInheritingThemeFile
         return '';
     }
 
+    public function outputCriticalCss()
+    {
+        $files = ['main'];
+        $css = '';
+        $usedFiles = [];
+
+        if (is_singular()) {
+            $postType = get_post_type();
+            $files[] = "single-{$postType}";
+        }
+
+        if (is_singular('page')) {
+            $files[] = 'page';
+
+            $template = basename(get_page_template());
+
+            if ($template) {
+                $files[] = str_replace('.php', '', $template);
+            }
+        } else if (is_archive()) {
+            $term = get_queried_object();
+            $files[] = "archive-{$term->taxonomy}";
+        } else if (is_search()) {
+            $files[] = 'search';
+        }
+
+        foreach ($files as $criticalFile) {
+            if ($criticalFile === 'main') {
+                $cssFile = 'critical';
+            } else {
+                $cssFile = "critical--{$criticalFile}";
+            }
+
+            if ($criticalCss = $this->outputAsset("dist/css/{$cssFile}.css")) {
+                $usedFiles[] = $cssFile;
+                $css .= $criticalCss;
+            }
+        }
+
+        return sprintf(
+            '<!-- %s --><style type="text/css">%s</style>',
+            implode(',', $usedFiles),
+            $css
+        );
+    }
+
+    public function outputDeferedNonCriticalCss()
+    {
+        $cssUrl = get_stylesheet_directory_uri() . '/assets/dist/css/main.css';
+        $cssTimestamp = filemtime(get_stylesheet_directory() . '/assets/dist/css/main.css');
+
+        return sprintf(
+            implode('', [
+                '<link rel="preload" href="%1$s?version=%2$s" as="style">',
+                '<link rel="stylesheet" href="%1$s?version=%2$s" media="print" onload="this.media=\'all\'; this.onload=null;">'
+            ]),
+            $cssUrl,
+            $cssTimestamp
+        );
+    }
+
 }
