@@ -37,4 +37,14 @@ function TGHP$tghp:classCase$()
     return \TGHP\$tghp:classCase$\$tghp:classCase$::instance();
 }
 
+/**
+ * Alias for TGHP$tghp:classCase$ function above
+ *
+ * @return  \TGHP\$tghp:classCase$\$tghp:classCase$
+ */
+function TGHPSite()
+{
+    return TGHP$tghp:classCase$();
+}
+
 TGHP$tghp:classCase$();
