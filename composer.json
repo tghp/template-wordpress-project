@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "johnpbloch/wordpress": "^5",
+        "johnpbloch/wordpress": "^6",
         "tghp/wp-composer-clean": "^2.1",
         "vlucas/phpdotenv": "^5",
         "wpackagist-plugin/meta-box": "^5",
