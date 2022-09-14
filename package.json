@@ -4,13 +4,11 @@
   "description": "$tghp:standard$ WordPress Project",
   "author": "TGHP",
   "devDependencies": {
-    "@tghp/gulppress": "^2.4.0",
-    "@babel/register": "~7.11.5",
-    "@babel/plugin-transform-runtime": "~7.11.5",
-    "@babel/plugin-transform-react-jsx": "^7.14.5"
+    "@tghp/gulppress": "^4.0.0",
+    "@babel/register": "~7.11.5"
   },
   "dependencies": {
-    "@tghp/groundwork.js": "^2.0.0",
+    "@tghp/groundwork.js": "^2.1.1",
     "easings-css": "^2.0.3",
     "family.scss": "^1.0.8",
     "jquery": "^3.6.0",
