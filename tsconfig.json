@@ -14,5 +14,10 @@
     /* Completeness */
     "skipLibCheck": true
   },
-  "include": ["./src/**/*", "./*.d.ts"]
+  "include": [
+    "./src/**/*",
+    "./vite.config.mts",
+    "./*.d.ts",
+    "./node_modules/@tghp/vitepress/types.d.ts"
+  ]
 }

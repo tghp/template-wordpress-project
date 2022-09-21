@@ -84,7 +84,7 @@ class Asset extends AbstractInheritingThemeFile
                 $cssFile = "critical--{$criticalFile}";
             }
 
-            if ($criticalCss = $this->outputAsset("dist/css/{$cssFile}.css")) {
+            if ($criticalCss = $this->outputAsset("dist/{$cssFile}.css")) {
                 $usedFiles[] = $cssFile;
                 $css .= $criticalCss;
             }
@@ -99,8 +99,8 @@ class Asset extends AbstractInheritingThemeFile
 
     public function outputDeferedNonCriticalCss()
     {
-        $cssUrl = get_stylesheet_directory_uri() . '/assets/dist/css/main.css';
-        $cssTimestamp = filemtime(get_stylesheet_directory() . '/assets/dist/css/main.css');
+        $cssUrl = get_stylesheet_directory_uri() . '/assets/dist/main.css';
+        $cssTimestamp = filemtime(get_stylesheet_directory() . '/assets/dist/main.css');
 
         return sprintf(
             implode('', [

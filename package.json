@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "$tghp:standard$ WordPress Project",
   "author": "TGHP",
+  "scripts": {
+    "dev": "vite build --mode=watch",
+    "build": "vite build"
+  },
   "devDependencies": {
-    "@tghp/gulppress": "^4.0.0",
-    "@babel/register": "~7.11.5"
+    "@tghp/vitepress": "^0.1.0"
   },
   "dependencies": {
     "@tghp/groundwork.js": "^2.1.1",

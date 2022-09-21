@@ -59,16 +59,16 @@ class Theme extends Abstract$tghp:classCase$
     {
         wp_enqueue_style(
             'main',
-            get_stylesheet_directory_uri() . '/assets/dist/css/main.css',
+            get_stylesheet_directory_uri() . '/assets/dist/main.css',
             [],
-            filemtime(get_stylesheet_directory() . '/assets/dist/css/main.css')
+            filemtime(get_stylesheet_directory() . '/assets/dist/main.css')
         );
 
         wp_enqueue_script(
             '$tghp:lowerCaseHyphenated$',
-            get_stylesheet_directory_uri() . '/assets/dist/js/main.js',
+            get_stylesheet_directory_uri() . '/assets/dist/main.js',
             [],
-            filemtime(get_stylesheet_directory() . '/assets/dist/js/main.js')
+            filemtime(get_stylesheet_directory() . '/assets/dist/main.js')
         );
     }
 
