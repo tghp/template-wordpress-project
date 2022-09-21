@@ -1,0 +1,78 @@
+<?php
+
+namespace TGHP\$tghp:classCase$\PostType;
+
+use TGHP\$tghp:classCase$\$tghp:classCase$;
+
+class Thing extends AbstractPostType
+{
+
+    /**
+     * Defined post type as constant here so if can it can be accessed
+     * outside of this class without creating a new instantiation
+     */
+    const POST_TYPE_CODE = 'thing';
+
+    /**
+     * {@inheritDoc}
+     */
+    protected $postTypeCode = self::POST_TYPE_CODE;
+
+    /**
+     * {@inheritDoc}
+     */
+    public function define(): array
+    {
+        $singular = 'Thing';
+        $plural = 'Things';
+
+        return [
+            'label' => __($singular, $tghp:classCase$::getTextDomain()),
+            'description' => __($singular, $tghp:classCase$::getTextDomain()),
+            'labels' => [
+                'name' => __($singular, $tghp:classCase$::getTextDomain()),
+                'singular_name' => __($singular, $tghp:classCase$::getTextDomain()),
+                'menu_name' => __($singular, $tghp:classCase$::getTextDomain()),
+                'name_admin_bar' => __($singular, $tghp:classCase$::getTextDomain()),
+                'all_items' => __("All {$plural}", $tghp:classCase$::getTextDomain()),
+                'add_new_item' => __("Add New {$singular}", $tghp:classCase$::getTextDomain()),
+                'add_new' => __("New {$singular}", $tghp:classCase$::getTextDomain()),
+                'new_item' => __("New {$singular}", $tghp:classCase$::getTextDomain()),
+                'edit_item' => __("Edit {$singular}", $tghp:classCase$::getTextDomain()),
+                'update_item' => __("Update {$singular}", $tghp:classCase$::getTextDomain()),
+                'view_item' => __("View {$singular}", $tghp:classCase$::getTextDomain()),
+                'search_items' => __("Search {$singular}", $tghp:classCase$::getTextDomain()),
+                'not_found' => __("Not found", $tghp:classCase$::getTextDomain()),
+                'not_found_in_trash' => __("Not found in Trash", $tghp:classCase$::getTextDomain()),
+            ],
+            'supports' => [
+                'title',
+//                'thumbnail',
+//                'editor',
+//                'author',
+//                'excerpt',
+//                'revisions',
+//                'page-attributes'
+            ],
+            'hierarchical' => false,
+            'public' => true,
+            'show_ui' => true,
+            'rewrite' => [
+                'slug' => strtolower(preg_replace('/\s/g', '', $singular)),
+            ],
+            'show_in_menu' => true,
+            'menu_position' => null,
+            'has_archive' => false,
+            'exclude_from_search' => false,
+            'publicly_queryable' => true,
+            'capability_type' => 'page',
+            'show_in_rest' => true,
+            /* @see https://developer.wordpress.org/resource/dashicons/#visibility */
+            'menu_icon' => 'dashicons-default',
+//            'show_in_graphql' => true,
+//            'graphql_single_name' => preg_replace('/\s/g', '', $singular),
+//            'graphql_plural_name' => preg_replace('/\s/g', '', $singular),
+        ];
+    }
+
+}

@@ -1,0 +1,65 @@
+<?php
+
+namespace TGHP\$tghp:classCase$\Taxonomy;
+
+use TGHP\$tghp:classCase$\$tghp:classCase$;
+
+class ThingType extends AbstractTaxonomy
+{
+
+    /**
+     * Defined taxonomy as constant here so if can it can be accessed
+     * outside of this class without creating a new instantiation
+     */
+    const TAXONOMY_CODE = 'thing_type';
+
+    /**
+     * {@inheritDoc}
+     */
+    protected $taxonomyCode = self::TAXONOMY_CODE;
+
+    /**
+     * Defined associated post type as constant here so if can it can be accessed
+     * outside of this class without creating a new instantiation
+     */
+    const POST_TYPE_CODE = 'thing';
+
+    /**
+     * {@inheritDoc}
+     */
+    protected $postTypeCode = self::POST_TYPE_CODE;
+
+    /**
+     * {@inheritDoc}
+     */
+    public function define(): array
+    {
+        $singular = 'Thing Type';
+        $plural = 'Thing Types';
+
+        return [
+            'hierarchical' => true, // Set this to 'false' for non-hierarchical taxonomy (like tags)
+            'labels' => [
+                'name' => __($plural, $tghp:classCase$::getTextDomain()),
+                'singular_name' => __($singular, $tghp:classCase$::getTextDomain()),
+                'search_items' => __("Search {$plural}", $tghp:classCase$::getTextDomain()),
+                'all_items' => __("All {$plural}", $tghp:classCase$::getTextDomain()),
+                'parent_item' => __("Parent {$singular}", $tghp:classCase$::getTextDomain()),
+                'parent_item_colon' => __("Parent {$singular}:", $tghp:classCase$::getTextDomain()),
+                'edit_item' => __("Edit {$singular}", $tghp:classCase$::getTextDomain()),
+                'update_item' => __("Update {$singular}", $tghp:classCase$::getTextDomain()),
+                'add_new_item' => __("Add New {$singular}", $tghp:classCase$::getTextDomain()),
+                'new_item_name' => __("New {$singular} Name", $tghp:classCase$::getTextDomain()),
+                'menu_name' => __($plural, $tghp:classCase$::getTextDomain()),
+            ],
+            'show_ui' => true,
+            'show_admin_column' => true,
+            'query_var' => true,
+            'show_in_rest' => true,
+            'rewrite' => ['slug' => 'issue'],
+//            'show_in_graphql' => true,
+//            'graphql_single_name' => preg_replace('/\s/g', '', $singular),
+//            'graphql_plural_name' => preg_replace('/\s/g', '', $singular),
+        ];
+    }
+}

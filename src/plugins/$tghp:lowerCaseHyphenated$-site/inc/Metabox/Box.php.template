@@ -1,0 +1,38 @@
+<?php
+
+namespace TGHP\$tghp:classCase$\Metabox;
+
+use TGHP\$tghp:classCase$\Metabox;
+
+class Box extends AbstractMetabox implements MetaboxDefinerInterface
+{
+    /**
+     * {@inheritDoc}
+     */
+    public function define(): array
+    {
+        $metaBoxes[] = [
+            'id' => Metabox::generateKey('unique_id'),
+            'title' => 'Metabox Title',
+            // Criteria
+            // i.e.
+//            'post_types' => ['page'],
+//            'include' => [
+//                'template' => ['template-mission.php'],
+//            ],
+            // or
+//            'post_types' => ['thing'],
+            'revision' => true,
+            'fields' => [
+                // Fields
+//                [
+//                    'id' => Metabox::generateKey(''),
+//                    'name' => '',
+//                    'type' => '',
+//                ],
+            ],
+        ];
+
+        return $metaBoxes;
+    }
+}
