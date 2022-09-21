@@ -19,6 +19,7 @@ class Admin extends AbstractDefinesMetabox
 
         add_action('admin_init', [$this, 'preventUpdateChecks']);
         add_action('admin_enqueue_scripts', [$this, 'addAdminStyles']);
+//        add_action('admin_init', [$this, 'controlEditor']);
     }
 
     /**
@@ -33,6 +34,30 @@ class Admin extends AbstractDefinesMetabox
                 [],
                 filemtime($tghp:classCase$::getPluginPath() . '/assets/src/css/admin.css')
             );
+        }
+    }
+
+    /**
+     * Control when the editor displays
+     *
+     * @return void
+     */
+    public function controlEditor()
+    {
+        global $pagenow;
+
+        if (isset($_GET['post']) && $pagenow !== 'post-new.php') {
+            $template = get_post_meta($_GET['post'], '_wp_page_template', true);
+
+            if ($template && $template !== 'default') {
+                $remove = true;
+            }
+        } else {
+            $remove = true;
+        }
+
+        if ($remove) {
+            remove_post_type_support('page', 'editor');
         }
     }
 
