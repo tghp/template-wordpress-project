@@ -3,7 +3,6 @@
 namespace TGHP\$tghp:classCase$;
 
 use TGHP\$tghp:classCase$\Taxonomy\TaxonomyDefinerInterface;
-use TGHP\$tghp:classCase$\Taxonomy\Team;
 
 class Taxonomy extends AbstractDefines
 {
@@ -22,7 +21,9 @@ class Taxonomy extends AbstractDefines
 
     protected function _getDefiners()
     {
-        return [];
+        return [
+            // Taxonomy definers here
+        ];
     }
 
     protected function _processDefiner(DefinerInterface $definer)

@@ -3,8 +3,6 @@
 namespace TGHP\$tghp:classCase$;
 
 use TGHP\$tghp:classCase$\PostType\PostTypeDefinerInterface;
-use TGHP\$tghp:classCase$\PostType\CaseStudy;
-use TGHP\$tghp:classCase$\PostType\Team;
 
 class PostType extends AbstractDefines
 {
@@ -23,7 +21,9 @@ class PostType extends AbstractDefines
 
     protected function _getDefiners()
     {
-        return [];
+        return [
+            // Definer classes here
+        ];
     }
 
     protected function _processDefiner(DefinerInterface $definer)

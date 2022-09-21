@@ -2,9 +2,6 @@
 
 namespace TGHP\$tghp:classCase$;
 
-use TGHP\$tghp:classCase$\Metabox\MetaboxDefinerInterface;
-use TGHP\$tghp:classCase$\Metabox\MetaboxPreparerInterface;
-
 class Metabox extends AbstractDefinesMetabox
 {
 
@@ -28,7 +25,9 @@ class Metabox extends AbstractDefinesMetabox
      */
     public function _getDefiners()
     {
-        return [];
+        return [
+            // Definer classes here
+        ];
     }
 
     /**
