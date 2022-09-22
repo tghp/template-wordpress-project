@@ -56,7 +56,7 @@ class Admin extends AbstractDefinesMetabox
             $remove = true;
         }
 
-        if ($remove) {
+        if (isset($remove) && $remove) {
             remove_post_type_support('page', 'editor');
         }
     }
