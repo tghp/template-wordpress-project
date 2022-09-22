@@ -17,7 +17,7 @@ class Admin extends AbstractDefinesMetabox
     {
         parent::__construct($$tghp:camelCase$);
 
-        add_action('admin_init', [$this, 'preventUpdateChecks']);
+        add_action('admin_init', [$this, 'preventWpApiCallsAndChecks']);
         add_action('admin_enqueue_scripts', [$this, 'addAdminStyles']);
 //        add_action('admin_init', [$this, 'controlEditor']);
     }
@@ -64,9 +64,18 @@ class Admin extends AbstractDefinesMetabox
     /**
      * @return void
      */
-    public function preventUpdateChecks()
+    public function preventWpApiCallsAndChecks()
     {
         if (!isset($_SERVER['APP_ENV']) || $_SERVER['APP_ENV'] !== 'local') {
+            /*
+             * Disable general calls (e.g. api.wordpress.org/block-patterns/)
+             */
+            add_filter( 'pre_http_request', function ($preempt, $parsedargs, $url) {
+                if (preg_match('#api\.wordpress\.org#', $url)) {
+                    return true;
+                }
+            }, 10, 3);
+
             /*
              * Disable Theme Updates
              */
