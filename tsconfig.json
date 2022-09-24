@@ -4,6 +4,7 @@
     "target": "esnext",
     "lib": ["dom", "esnext"],
     "jsx": "react",
+    "allowJs": true,
     /* Modules */
     "module": "esnext",
     "moduleResolution": "node",
