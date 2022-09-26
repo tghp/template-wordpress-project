@@ -11,7 +11,7 @@
     "@tghp/vitepress": "^0.1.0"
   },
   "dependencies": {
-    "@tghp/groundwork.js": "^2.1.1",
+    "@tghp/groundwork.js": "^2.1.3",
     "easings-css": "^2.0.3",
     "family.scss": "^1.0.8",
     "jquery": "^3.6.0",
