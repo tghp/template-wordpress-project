@@ -8,7 +8,7 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@tghp/vitepress": "^0.1.0"
+    "@tghp/vitepress": "^0.4.0"
   },
   "dependencies": {
     "@tghp/groundwork.js": "^2.1.3",
