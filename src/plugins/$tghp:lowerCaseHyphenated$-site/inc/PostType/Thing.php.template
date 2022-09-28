@@ -58,7 +58,7 @@ class Thing extends AbstractPostType
             'public' => true,
             'show_ui' => true,
             'rewrite' => [
-                'slug' => strtolower(preg_replace('/\s/g', '', $singular)),
+                'slug' => strtolower(preg_replace('/\s/g', '-', $singular)),
             ],
             'show_in_menu' => true,
             'menu_position' => null,

@@ -56,7 +56,9 @@ class ThingType extends AbstractTaxonomy
             'show_admin_column' => true,
             'query_var' => true,
             'show_in_rest' => true,
-            'rewrite' => ['slug' => 'issue'],
+            'rewrite' => [
+              'slug' => strtolower(preg_replace('/\s/g', '-', $singular)),
+            ],
 //            'show_in_graphql' => true,
 //            'graphql_single_name' => preg_replace('/\s/g', '', $singular),
 //            'graphql_plural_name' => preg_replace('/\s/g', '', $singular),
