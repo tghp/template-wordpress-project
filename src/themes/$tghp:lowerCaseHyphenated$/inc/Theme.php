@@ -57,14 +57,6 @@ class Theme extends Abstract$tghp:classCase$
 
     public function enqueueStyles()
     {
-        // Commented because main styles are included via \TGHP\$tghp:classCase$\Asset::outputDeferedNonCriticalCss
-//        wp_enqueue_style(
-//            'main',
-//            get_stylesheet_directory_uri() . '/assets/dist/main.css',
-//            [],
-//            filemtime(get_stylesheet_directory() . '/assets/dist/main.css')
-//        );
-
         wp_enqueue_script(
             '$tghp:lowerCaseHyphenated$',
             get_stylesheet_directory_uri() . '/assets/dist/main.js',
