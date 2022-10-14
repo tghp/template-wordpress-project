@@ -13,7 +13,7 @@ class Theme extends Abstract$tghp:classCase$
     {
         parent::__construct($$tghp:camelCase$);
         add_action('after_setup_theme', [$this, 'setup']);
-        add_action('wp_enqueue_scripts', [$this, 'enqueueStyles']);
+        add_action('wp_enqueue_scripts', [$this, 'enqueueScripts']);
         add_filter('script_loader_tag', [$this, 'deferJsScripts'], 10, 1);
         add_action('init', [$this, 'addImageSizes']);
         remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -55,15 +55,46 @@ class Theme extends Abstract$tghp:classCase$
         ]);
     }
 
-    public function enqueueStyles()
+    /**
+     * Enqueue scripts for the theme, using the internal _enqueueScript method so that they can be collected for HMR
+     *
+     * @return void
+     */
+    public function enqueueScripts()
     {
-        wp_enqueue_script(
-            '$tghp:lowerCaseHyphenated$',
+        $this->_enqueueScript(
+            'main',
+            get_stylesheet_directory_uri() . '/assets/src/js/main.ts',
             get_stylesheet_directory_uri() . '/assets/dist/main.js',
-            [],
-            filemtime(get_stylesheet_directory() . '/assets/dist/main.js')
+            get_stylesheet_directory() . '/assets/dist/main.js'
         );
     }
+
+    /**
+     * Enqueue script, either using wp_enqueue_script or providing the script to the HMR system if it is enabled
+     *
+     * @param $handle
+     * @param $src
+     * @param $filePath
+     * @return void
+     */
+    protected function _enqueueScript($handle, $developmentSrc, $productionSrc, $productionFilePath)
+    {
+        if (defined('VITE_HMR')) {
+            $baseUrl = preg_replace('#/wp/?$#', '', home_url());
+            $developmentSrc = str_replace($baseUrl, '', $developmentSrc);
+            $developmentSrc = preg_replace('#^/?wp-content#', 'src', $developmentSrc);
+
+            TGHPSite()->dev->enqueueScript($developmentSrc);
+        } else {
+            wp_enqueue_script(
+                $handle,
+                $productionSrc,
+                [],
+                $productionFilePath
+            );
+        }
+}
 
     /**
      * Parse scripts enqueue and defer those with flags

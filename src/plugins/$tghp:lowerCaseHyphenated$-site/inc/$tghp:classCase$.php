@@ -48,6 +48,11 @@ class $tghp:classCase$ {
     protected $admin;
 
     /**
+     * @var Dev
+     */
+    public $dev;
+
+    /**
      * Is logging allowed
      *
      * @var bool
@@ -94,6 +99,7 @@ class $tghp:classCase$ {
        $this->asset = new Asset($this);
        $this->util = new Util($this);
        $this->admin = new Admin($this);
+       $this->dev = new Dev($this);
    }
 
    /**

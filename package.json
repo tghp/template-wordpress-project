@@ -4,7 +4,9 @@
   "description": "$tghp:standard$ WordPress Project",
   "author": "TGHP",
   "scripts": {
-    "dev": "vite build --mode=watch",
+    "dev": "vite dev",
+    "develop": "npm run dev",
+    "watch": "vite build --mode=watch",
     "build": "vite build"
   },
   "devDependencies": {

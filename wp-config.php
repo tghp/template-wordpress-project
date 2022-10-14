@@ -137,6 +137,17 @@ if (isset($_ENV['EMAIL_SMTP_ALLOW_INVALID_SSL'])) {
     define('SAR_FSMTP_ALLOW_INVALID_SSL', 'off');
 }
 
+/**
+ * Vite
+ */
+if (isset($_ENV['VITE_HMR'])) {
+    define('VITE_HMR', $_ENV['VITE_HMR']);
+}
+
+if (isset($_ENV['VITE_PORT'])) {
+    define('VITE_PORT', $_ENV['VITE_PORT']);
+}
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */

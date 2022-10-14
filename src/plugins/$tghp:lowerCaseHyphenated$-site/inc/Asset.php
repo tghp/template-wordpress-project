@@ -51,11 +51,14 @@ class Asset extends AbstractInheritingThemeFile
         return '';
     }
 
-    public function outputCriticalCss()
+    /**
+     * Get possible CSS non-critical filenames
+     *
+     * @return string[]
+     */
+    public function getCssFileSearchNames()
     {
         $files = ['main'];
-        $css = '';
-        $usedFiles = [];
 
         if (is_singular()) {
             $postType = get_post_type();
@@ -77,15 +80,42 @@ class Asset extends AbstractInheritingThemeFile
             $files[] = 'search';
         }
 
-        foreach ($files as $criticalFile) {
-            if ($criticalFile === 'main') {
-                $cssFile = 'critical';
-            } else {
-                $cssFile = "critical--{$criticalFile}";
-            }
+        return $files;
+    }
 
-            if ($criticalCss = $this->outputAsset("dist/{$cssFile}.css")) {
-                $usedFiles[] = $cssFile;
+    /**
+     * Get possible critical CSS filenames
+     *
+     * @return string[]
+     */
+    public function getCssCriticalFileSearchNames()
+    {
+        return array_map(function ($filename) {
+            if ($filename === 'main') {
+                return 'critical';
+            } else {
+                return "critical--{$filename}";
+            }
+        }, $this->getCssFileSearchNames());
+    }
+
+    /**
+     * Output all critical CSS
+     *
+     * @return string
+     */
+    public function outputCriticalCss()
+    {
+        if (defined('VITE_HMR')) {
+            return '';
+        }
+
+        $css = '';
+        $usedFiles = [];
+
+        foreach ($this->getCssCriticalFileSearchNames() as $criticalFile) {
+            if ($criticalCss = $this->outputAsset("dist/{$criticalFile}.css")) {
+                $usedFiles[] = $criticalFile;
                 $css .= $criticalCss;
             }
         }
@@ -97,8 +127,17 @@ class Asset extends AbstractInheritingThemeFile
         );
     }
 
+    /**
+     * Output all non-critical CSS
+     *
+     * @return string
+     */
     public function outputDeferedNonCriticalCss()
     {
+        if (defined('VITE_HMR')) {
+            return '';
+        }
+
         $cssUrl = get_stylesheet_directory_uri() . '/assets/dist/main.css';
         $cssTimestamp = filemtime(get_stylesheet_directory() . '/assets/dist/main.css');
 
