@@ -25,8 +25,8 @@ class Menu extends Abstract$tghp:classCase$
     public function addMenus()
     {
         register_nav_menus([
-            'header-nav' => esc_html__('Main navigation', \TGHP\$tghp:classCase$Theme\$tghp:classCase$::getTextDomain()),
-            'footer-nav' => esc_html__('Footer navigation', \TGHP\$tghp:classCase$Theme\$tghp:classCase$::getTextDomain()),
+            'header-nav' => esc_html__('Main navigation', $tghp:classCase$::getTextDomain()),
+            'footer-nav' => esc_html__('Footer navigation', $tghp:classCase$::getTextDomain()),
         ]);
     }
 
