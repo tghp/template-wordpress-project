@@ -94,7 +94,7 @@ class Theme extends Abstract$tghp:classCase$
                 $productionFilePath
             );
         }
-}
+    }
 
     /**
      * Parse scripts enqueue and defer those with flags
