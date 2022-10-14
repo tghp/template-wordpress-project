@@ -2,8 +2,6 @@
 
 namespace TGHP\$tghp:classCase$;
 
-use PHPHtmlParser\Dom;
-use PHPHtmlParser\Options;
 use TGHP\$tghp:classCase$\Blocks\BlockDefinerInterface;
 use TGHP\$tghp:classCase$\Blocks\CaseStudySingle;
 
