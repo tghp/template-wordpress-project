@@ -35,7 +35,7 @@ function TGHP$tghp:classCase$()
 {
     $theme = wp_get_theme();
 
-    if ($theme && ($theme->get_template() == '$tghp:lowerCaseHyphenated$' || $theme->get_stylsheet() == '$tghp:lowerCaseHyphenated$')) {
+    if ($theme && ($theme->get_template() == '$tghp:lowerCaseHyphenated$' || $theme->get_stylesheet() == '$tghp:lowerCaseHyphenated$')) {
         return \TGHP\$tghp:classCase$\$tghp:classCase$::instance();
     }
 }
