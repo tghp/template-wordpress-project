@@ -5,7 +5,7 @@ namespace TGHP\$tghp:classCase$;
 use TGHP\$tghp:classCase$\Metabox\MetaboxDefinerInterface;
 use TGHP\$tghp:classCase$\Metabox\MetaboxPreparerInterface;
 
-class Admin extends AbstractDefinesMetabox
+class Admin extends Abstract$tghp:classCase$
 {
 
     /**
