@@ -23,7 +23,6 @@ if (defined('WP_INSTALLING') && WP_INSTALLING) {
     return;
 }
 
-
 // Init plugin
 require TGHP_$tghp:upperCaseUnderscored$_PLUGIN_PATH . '/inc/$tghp:classCase$.php';
 
@@ -34,7 +33,11 @@ require TGHP_$tghp:upperCaseUnderscored$_PLUGIN_PATH . '/inc/$tghp:classCase$.ph
  */
 function TGHP$tghp:classCase$()
 {
-    return \TGHP\$tghp:classCase$\$tghp:classCase$::instance();
+    $theme = wp_get_theme();
+
+    if ($theme && ($theme->get_template() == '$tghp:lowerCaseHyphenated$' || $theme->get_stylsheet() == '$tghp:lowerCaseHyphenated$')) {
+        return \TGHP\$tghp:classCase$\$tghp:classCase$::instance();
+    }
 }
 
 /**
