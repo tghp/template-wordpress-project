@@ -66,7 +66,10 @@ class Dev extends Abstract$tghp:classCase$
 
                 $enqueuedScripts = $this->enqueuedScripts;
 
-                include_once __DIR__ . '/../templates/dev/hmr.php';
+                include_once sprintf(
+                    '%s/templates/dev/hmr.php',
+                    TGHP_$tghp:upperCaseUnderscored$_PLUGIN_PATH
+                );
             }
         }
 
