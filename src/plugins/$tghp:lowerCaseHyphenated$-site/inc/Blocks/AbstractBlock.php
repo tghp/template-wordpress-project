@@ -38,13 +38,13 @@ abstract class AbstractBlock extends Abstract$tghp:classCase$ implements BlockDe
     }
 
     /**
-     * Render out the block, using the template: /blocks/{code}/template.php
+     * Render out the block, using the template: /templates/blocks/{code}/template.php
      * @return void
      */
     public function render(): void
     {
         $template = sprintf(
-            '%s/blocks/%s/template.php',
+            '%s/templates/blocks/%s/template.php',
             TGHP_$tghp:upperCaseUnderscored$_PLUGIN_PATH,
             $this->getCode()
         );
