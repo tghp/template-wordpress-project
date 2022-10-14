@@ -30,11 +30,13 @@ class Dev extends Abstract$tghp:classCase$
         ob_start();
 
         if (defined('VITE_HMR') && defined('VITE_PORT')) {
-            $viteConfig = file_get_contents(__DIR__ . '/../../../../vite.config.mts');
+            $viteConfig = file_get_contents(sprintf(
+                '%s/vite.config.mts',
+                ABSPATH . '/..'
+            ));
 
             if ($viteConfig) {
                 $usesReact = preg_match('/[\'"]?react[\'"]?:\s*?true/', $viteConfig);
-
 
                 $cssSearchFiles = $this->$tghp:camelCase$->asset->getCssFileSearchNames();
                 $cssCriticalSearchFiles = $this->$tghp:camelCase$->asset->getCssCriticalFileSearchNames();
