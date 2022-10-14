@@ -5,6 +5,45 @@ namespace TGHP\$tghp:classCase$;
 class Asset extends AbstractInheritingThemeFile
 {
 
+    /**
+     * Asset constructor.
+     *
+     * @param $$tghp:camelCase$ $tghp:classCase$
+     */
+    public function __construct($tghp:classCase$ $$tghp:camelCase$)
+    {
+        parent::__construct($$tghp:camelCase$);
+
+        add_action('init', [$this, 'addImageSizes']);
+    }
+
+    /**
+     * Add WordPress image sizes
+     *
+     * @return void
+     */
+    public function addImageSizes()
+    {
+        add_image_size('xxs', 400, 9999, true);
+        add_image_size('xs', 460, 9999, true);
+        add_image_size('s', 660, 9999, true);
+        add_image_size('m', 720, 9999, true);
+        add_image_size('l', 980, 9999, true);
+        add_image_size('xl', 1024, 9999, true);
+        add_image_size('xxl', 1400, 9999, true);
+        add_image_size('xxxl', 1700, 9999, true);
+        add_image_size('xxxxl', 2000, 9999, true);
+        add_image_size('xxs-uncropped', 402, 9999, false);
+        add_image_size('xs-uncropped', 462, 9999, false);
+        add_image_size('s-uncropped', 662, 9999, false);
+        add_image_size('m-uncropped', 722, 9999, false);
+        add_image_size('l-uncropped', 982, 9999, false);
+        add_image_size('xl-uncropped', 1032, 9999, false);
+        add_image_size('xxl-uncropped', 1402, 9999, false);
+        add_image_size('xxxl-uncropped', 1702, 9999, false);
+        add_image_size('xxxxl-uncropped', 2002, 9999, false);
+        add_image_size('xs-square', 300, 300, true);
+    }
 
     /**
      * Where, in themes (child and parent) and plugins to look for files, any searches will be relative to it
