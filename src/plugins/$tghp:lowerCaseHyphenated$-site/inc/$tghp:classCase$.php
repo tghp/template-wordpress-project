@@ -5,52 +5,46 @@ namespace TGHP\$tghp:classCase$;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-class $tghp:classCase$ {
+class $tghp:classCase$
+{
 
-    /**
-     * @var Metabox
-     */
+    /** @var ThemeSupports */
+    public $themeSupports;
+
+    /** @var Metabox */
     public $metabox;
 
-    /**
-     * @var Blocks
-     */
+    /** @var Blocks */
     public $blocks;
 
-    /**
-     * @var PostType
-     */
+    /** @var PostType */
     public $postType;
 
-    /**
-     * @var Taxonomy
-     */
+    /** @var Taxonomy */
     public $taxonomy;
-    
-    /**
-     * @var Asset
-     */
+
+    /** @var Menu */
+    public $menu;
+
+    /** @var Enqueues */
+    public $enqueues;
+
+    /** @var Asset */
     public $asset;
 
-    /**
-     * @var Util
-     */
+    /** @var Util */
     public $util;
+
+    /** @var Admin */
+    public $admin;
+
+    /** @var Dev */
+    public $dev;
 
     /**
      * @var Logger
      */
     protected $logger;
-
-    /**
-     * @var Admin
-     */
-    protected $admin;
-
-    /**
-     * @var Dev
-     */
-    public $dev;
 
     /**
      * Is logging allowed
@@ -92,11 +86,14 @@ class $tghp:classCase$ {
        $this->setupLogging();
 
        spl_autoload_register([$this, 'autoload']);
+       $this->themeSupports = new ThemeSupports($this);
        $this->metabox = new Metabox($this);
        $this->blocks = new Blocks($this);
        $this->postType = new PostType($this);
        $this->taxonomy = new Taxonomy($this);
+       $this->menu = new Menu($this);
        $this->asset = new Asset($this);
+       $this->enqueues = new Enqueues($this);
        $this->util = new Util($this);
        $this->admin = new Admin($this);
        $this->dev = new Dev($this);
