@@ -5,12 +5,6 @@ namespace TGHP\$tghp:classCase$;
 class Asset extends AbstractInheritingThemeFile
 {
 
-    /**
-     * Store any found results in a basic cache
-     *
-     * @var array
-     */
-    protected $cache = [];
 
     /**
      * Where, in themes (child and parent) and plugins to look for files, any searches will be relative to it
@@ -22,6 +16,13 @@ class Asset extends AbstractInheritingThemeFile
     {
         return 'assets';
     }
+
+    /**
+     * For asset output, store any found results in a basic cache
+     *
+     * @var array
+     */
+    protected $cache = [];
 
     /**
      * Return the output of an asset, mainly useful for SVGs, but by using base64 encoding any regular
