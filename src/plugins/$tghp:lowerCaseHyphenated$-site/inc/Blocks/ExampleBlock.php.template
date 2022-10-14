@@ -1,0 +1,37 @@
+<?php
+
+namespace TGHP\$tghp:classCase$\Blocks;
+
+class ExampleBlock extends AbstractBlock
+{
+
+    public function define(): array
+    {
+        $blocks[] = [
+            'id' => $this->getId(),
+            'type' => 'block',
+            'icon' => 'media-document',
+            'title' => 'Example Block',
+            'category' => '$tghp:lowerCaseHyphenated$-blocks',
+            'render_callback' => function ($attributes) {
+                $this->render($attributes);
+            },
+            'enqueue_assets' => $this->enqueueAdminBlockAssets(),
+            'fields' => [
+                [
+                    'id' => 'title',
+                    'name' => 'Title',
+                    'type' => 'text',
+                ],
+            ]
+        ];
+
+        return $blocks;
+    }
+
+    public function getTitle(): string
+    {
+        retrun strtoupper(mb_get_block_field('title'));
+    }
+
+}
