@@ -12,11 +12,25 @@ class Asset extends AbstractInheritingThemeFile
      */
     protected $cache = [];
 
+    /**
+     * Where, in themes (child and parent) and plugins to look for files, any searches will be relative to it
+     *
+     * @param $locationType
+     * @return string
+     */
     public function getSearchSubPath($locationType)
     {
         return 'assets';
     }
 
+    /**
+     * Return the output of an asset, mainly useful for SVGs, but by using base64 encoding any regular
+     * image type can be easily embedded
+     *
+     * @param $path
+     * @param $base64
+     * @return false|mixed|string
+     */
     public function outputAsset($path, $base64 = false)
     {
         $path = apply_filters('tghp_posttype_asset_output_path', $path);

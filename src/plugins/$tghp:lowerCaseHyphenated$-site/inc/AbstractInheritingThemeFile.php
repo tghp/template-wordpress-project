@@ -11,9 +11,10 @@ abstract class AbstractInheritingThemeFile extends Abstract$tghp:classCase$
     protected $globalSubPath = '';
 
     /**
-     * Search for files within this directory if defined
+     * Where, in themes (child and parent) and plugins to look for files, any searches will be relative to it
      *
-     * @var string
+     * @param $locationType
+     * @return string
      */
     public function getSearchSubPath($locationType)
     {
