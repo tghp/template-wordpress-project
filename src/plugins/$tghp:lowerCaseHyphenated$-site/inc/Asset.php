@@ -192,17 +192,28 @@ class Asset extends AbstractInheritingThemeFile
             return '';
         }
 
-        $cssUrl = get_stylesheet_directory_uri() . '/assets/dist/main.css';
-        $cssTimestamp = filemtime(get_stylesheet_directory() . '/assets/dist/main.css');
+        $styles = '';
 
-        return sprintf(
-            implode('', [
-                '<link rel="preload" href="%1$s?version=%2$s" as="style">',
-                '<link rel="stylesheet" href="%1$s?version=%2$s" media="print" onload="this.media=\'all\'; this.onload=null;">'
-            ]),
-            $cssUrl,
-            $cssTimestamp
-        );
+        foreach ($this->getCssFileSearchNames() as $nonCriticalFile) {
+            $cssUrl = sprintf('%s/assets/dist/%s.css', get_stylesheet_directory_uri(), $nonCriticalFile);
+            $cssTimestamp = filemtime(
+                sprintf('%s/assets/dist/%s.css', get_stylesheet_directory(), $nonCriticalFile)
+            );
+
+            if ($cssTimestamp) {
+                $styles .= PHP_EOL .
+                    sprintf(
+                        implode('', [
+                            '<link rel="preload" href="%1$s?version=%2$s" as="style">',
+                            '<link rel="stylesheet" href="%1$s?version=%2$s" media="print" onload="this.media=\'all\'; this.onload=null;">'
+                        ]),
+                        $cssUrl,
+                        $cssTimestamp
+                    );
+            }
+        }
+
+        return $styles;
     }
 
 }
