@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "HMR=$(dotenv -p VITE_HMR); PORT=$(dotenv -p VITE_PORT); [[ $HMR = 1 && $PORT > 1 ]] && vite dev --port \"$PORT\" || npm run watch",
     "develop": "npm run dev",
-    "watch": "vite build --mode=watch",
+    "watch": "vite build --mode watch",
     "build": "vite build"
   },
   "devDependencies": {
