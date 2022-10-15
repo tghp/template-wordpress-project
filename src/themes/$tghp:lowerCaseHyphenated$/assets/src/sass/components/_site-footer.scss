@@ -1,3 +1,4 @@
 .site-footer {
-
+  @include max-width-element;
+  @include main-padding;
 }

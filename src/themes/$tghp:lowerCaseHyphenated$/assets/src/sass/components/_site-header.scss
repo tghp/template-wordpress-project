@@ -1,3 +1,4 @@
 .site-header {
-
+  @include max-width-element;
+  @include main-padding;
 }
