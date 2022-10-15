@@ -4,13 +4,14 @@
   "description": "$tghp:standard$ WordPress Project",
   "author": "TGHP",
   "scripts": {
-    "dev": "vite dev",
+    "dev": "HMR=$(dotenv -p VITE_HMR); PORT=$(dotenv -p VITE_PORT); [[ $HMR = 1 && $PORT > 1 ]] && vite dev --port \"$PORT\" || npm run watch",
     "develop": "npm run dev",
     "watch": "vite build --mode=watch",
     "build": "vite build"
   },
   "devDependencies": {
-    "@tghp/vitepress": "^0.5.0"
+    "@tghp/vitepress": "^0.5.0",
+    "dotenv-cli": "^6.0.0"
   },
   "dependencies": {
     "@tghp/groundwork.js": "^2.1.3",
