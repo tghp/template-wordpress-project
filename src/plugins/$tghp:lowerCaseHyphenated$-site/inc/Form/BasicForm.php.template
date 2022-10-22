@@ -1,0 +1,44 @@
+<?php
+
+namespace TGHP\$tghp:classCase$\Form;
+
+use TGHP\$tghp:classCase$\Metabox;
+
+class BasicForm implements FormDefinerInterface
+{
+
+    /**
+     * @inheritDoc
+     */
+    public function getName()
+    {
+        return 'basic-form';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function define()
+    {
+        return [
+            'title' => __('Basic Form'),
+            'options' => [
+                'confirmation' => 'Thank you for your message.',
+                'button_class' => 'button',
+                'email' => [
+                    'email' => 'info@example.com',
+                    'title' => 'A form has been submitted',
+                ],
+            ],
+            'fields' => [
+                [
+                    'id' => 'message',
+                    'name' => 'Message',
+                    'type' => 'textarea',
+                    'required' => true,
+                ],
+            ],
+        ];
+    }
+
+}

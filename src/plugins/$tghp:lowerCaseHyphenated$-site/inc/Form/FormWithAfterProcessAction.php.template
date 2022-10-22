@@ -1,0 +1,77 @@
+<?php
+
+namespace TGHP\$tghp:classCase$\Form;
+
+use TGHP\$tghp:classCase$\Metabox;
+
+class FormWithAfterProcessAction implements FormDefinerInterface, FormAfterSubmissionProcessorInterface
+{
+
+    /**
+     * @inheritDoc
+     */
+    public function getName()
+    {
+        return 'form-with-after-process-form';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function define()
+    {
+        return [
+            'title' => __('Form With After Process'),
+            'options' => [
+                'confirmation' => 'Thank you for applying.',
+                'button_class' => 'button',
+                'email' => [
+                    'email' => 'info@example.com',
+                    'title' => 'A form has been submitted',
+                ],
+            ],
+            'fields' => [
+                [
+                    'id' => 'name',
+                    'name' => 'Name',
+                    'type' => 'text',
+                    'required' => true,
+                    'attributes' => [
+                        'placeholder' => 'Full Name',
+                    ],
+                ],
+                [
+                    'id' => 'email',
+                    'name' => 'Email',
+                    'type' => 'email',
+                    'required' => true,
+                    'attributes' => [
+                        'placeholder' => 'Email',
+                    ],
+                ],
+                [
+                    'id' => 'how_did_you_hear',
+                    'name' => 'How did you hear about us?',
+                    'type' => 'select',
+                    'options' => [
+                        '' => 'I don\'t remember',
+                        'google' => 'Google',
+                        'facebook' => 'Facebook',
+                        'friend' => 'Friend',
+                    ],
+                    'required' => true,
+                ],
+            ],
+        ];
+    }
+
+    public function afterProcess($postId)
+    {
+        $name = tghpcontact_get_submission_data($postId, 'name');
+        $email = tghpcontact_get_submission_data($postId, 'email');
+        $howDidYouHear = tghpcontact_get_submission_data($postId, 'how_did_you_hear');
+
+        // TODO: Implement your logic here
+    }
+
+}
