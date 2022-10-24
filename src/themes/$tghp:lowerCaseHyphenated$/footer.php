@@ -9,6 +9,11 @@
             ?>
         </nav>
 
+        <div class="site-footer__social">
+            <a href="<?= TGHPSite()->metabox->getSingleMetafieldValueFromOptions('twitter_url') ?>"><?= __('Twitter') ?></a>
+            <a href="<?= TGHPSite()->metabox->getSingleMetafieldValueFromOptions('linkedin_url') ?>"><?= __('LinkedIn') ?></a>
+        </div>
+
         <div class="site-footer__copyright">
             <?= sprintf('&copy; %s %s', date('Y'), get_bloginfo('name')) ?>
         </div>

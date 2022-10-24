@@ -1,0 +1,118 @@
+<?php
+
+namespace TGHP\$tghp:classCase$\Metabox;
+
+class Settings extends AbstractMetabox implements MetaboxPreparerInterface, MetaboxDefinerInterface
+{
+
+    /**
+     * {@inheritDoc}
+     */
+    public function prepare(): void
+    {
+        add_filter('mb_settings_pages', [$this, 'register']);
+    }
+
+    /**
+     * Register settings page
+     *
+     * @param $settingsPages
+     * @return mixed
+     */
+    public function register($settingsPages)
+    {
+        $settingsPages[] = [
+            'id' => 'site-options',
+            'menu_title' => 'Site Options',
+            'option_name' => 'site_options',
+            'submenu_title' => 'Options',
+            'tab_style' => 'left',
+            'submit_button' => 'Save Options',
+            'columns' => 1,
+            'tabs' => [
+                'general' => 'General',
+                'another-tab' => 'Another Tab',
+            ],
+        ];
+
+        return $settingsPages;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function define(): array
+    {
+        $metaboxes[] = [
+            'id' => 'settings_general',
+            'title' => 'General',
+            'settings_pages' => 'site-options',
+            'tab' => 'general',
+            'revision' => true,
+            'fields' => [
+                [
+                    'name' => 'Phone',
+                    'id' => 'phone',
+                    'type' => 'text'
+                ],
+                [
+                    'name' => 'Email',
+                    'id' => 'email',
+                    'type' => 'email'
+                ],
+                [
+                    'name' => 'Address',
+                    'id' => 'address',
+                    'type' => 'textarea'
+                ],
+                [
+                    'name' => 'Social Media',
+                    'type' => 'heading',
+                ],
+                [
+                    'name' => 'Twitter URL',
+                    'id' => 'twitter_url',
+                    'type' => 'url'
+                ],
+                [
+                    'name' => 'LinkedIn URL',
+                    'id' => 'linkedin_url',
+                    'type' => 'url'
+                ],
+            ],
+        ];
+
+        $metaboxes[] = [
+            'id' => 'settings_another_tab_1',
+            'title' => 'Another Tab Metabox 1',
+            'settings_pages' => 'site-options',
+            'tab' => 'another-tab',
+            'revision' => true,
+            'fields' => [
+                [
+                    'id' => 'field',
+                    'name' => 'Field',
+                    'type' => 'text',
+                ],
+            ],
+        ];
+
+        $metaboxes[] = [
+            'id' => 'settings_another_tab_2',
+            'title' => 'Another Tab Metabox 2',
+            'settings_pages' => 'site-options',
+            'tab' => 'another-tab',
+            'revision' => true,
+            'fields' => [
+                [
+                    'id' => 'field',
+                    'name' => 'Field',
+                    'type' => 'text',
+                ],
+            ],
+        ];
+
+        return $metaboxes;
+    }
+
+}
