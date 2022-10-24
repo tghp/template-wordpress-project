@@ -25,11 +25,27 @@ class Box extends AbstractMetabox implements MetaboxDefinerInterface
             'revision' => true,
             'fields' => [
                 // Fields
-//                [
-//                    'id' => Metabox::generateKey(''),
-//                    'name' => '',
-//                    'type' => '',
-//                ],
+                [
+                    'id' => Metabox::generateKey('text_field'),
+                    'name' => 'Text Field',
+                    'type' => 'text',
+                ],
+                [
+                    'id' => Metabox::generateKey('content'),
+                    'name' => 'Content',
+                    'type' => 'wyiswyg',
+                    'options' => [
+                        'tinymce' => [...$this->getStrippedTinymceConfig()]
+                    ]
+                ],
+                [
+                    'id' => Metabox::generateKey('content_with_extra_wysiwyg'),
+                    'name' => 'Content',
+                    'type' => 'wyiswyg',
+                    'options' => [
+                        'tinymce' => [...$this->getStrippedTinymceConfig(['toolbar1' => 'bullist,numlist')]
+                    ]
+                ],
             ],
         ];
 
