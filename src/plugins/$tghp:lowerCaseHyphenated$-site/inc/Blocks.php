@@ -17,6 +17,7 @@ class Blocks extends AbstractDefinesMetabox
     {
         parent::__construct($$tghp:camelCase$);
         add_filter('block_categories_all', [$this, 'addGutenbergBlockCategories'], 10, 2);
+        add_filter('allowed_block_types_all', [$this, 'setAllowedBlockTypes'], 10, 2);
     }
 
     protected function _getDefiners()
@@ -42,6 +43,24 @@ class Blocks extends AbstractDefinesMetabox
             ],
             $categories
         );
+    }
+
+    /**
+     * Control the allowed block types
+     *
+     * @param bool|string[] $allowedBlockTypes
+     * @param \WP_Block_Editor_Context $context
+     * @return string[]
+     */
+    public function setAllowedBlockTypes($allowedBlockTypes, $context): array
+    {
+        return [
+            'core/image',
+            'core/paragraph',
+            'core/heading',
+            'core/list',
+            'core/embed',
+        ];
     }
 
 }
