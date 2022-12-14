@@ -196,7 +196,7 @@ class Asset extends AbstractInheritingThemeFile
 
         foreach ($this->getCssFileSearchNames() as $nonCriticalFile) {
             $cssUrl = sprintf('%s/assets/dist/%s.css', get_stylesheet_directory_uri(), $nonCriticalFile);
-            $cssTimestamp = filemtime(
+            $cssTimestamp = @filemtime(
                 sprintf('%s/assets/dist/%s.css', get_stylesheet_directory(), $nonCriticalFile)
             );
 
