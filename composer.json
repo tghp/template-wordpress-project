@@ -13,12 +13,25 @@
         {
             "type": "composer",
             "url": "https://packages.metabox.io/<API_KEY>"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "kinsta/kinsta-mu-plugins",
+                "type": "wordpress-muplugin",
+                "version": "3.0.0",
+                "dist": {
+                    "url": "https://kinsta.com/kinsta-tools/kinsta-mu-plugins.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
         "johnpbloch/wordpress": "^6",
         "tghp/wp-composer-clean": "^2.1",
         "vlucas/phpdotenv": "^5",
+        "kinsta/kinsta-mu-plugins": "^3.0",
         "wpackagist-plugin/meta-box": "^5",
         "wpackagist-plugin/wordfence": "^7",
         "wpackagist-plugin/sar-friendly-smtp": "^1",
@@ -34,6 +47,9 @@
         "installer-paths": {
             "wp-content/plugins/{$name}/": [
                 "type:wordpress-plugin"
+            ],
+            "wp-content/mu-plugins/": [
+                "type:wordpress-muplugin"
             ],
             "wp-content/themes/{$name}/": [
                 "type:wordpress-theme"
