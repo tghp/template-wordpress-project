@@ -1,24 +1,9 @@
 {
-  "compilerOptions": {
-    /* Language and Environment */
-    "target": "esnext",
-    "lib": ["dom", "esnext"],
-    "jsx": "react",
-    "allowJs": true,
-    /* Modules */
-    "module": "esnext",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    /* Type Checking */
-    "strict": true,
-    /* Completeness */
-    "skipLibCheck": true
-  },
+  "extends": "./node_modules/@tghp/vitepress/tsconfig.json",
+  "compilerOptions": {},
   "include": [
     "./src/**/*",
     "./vite.config.mts",
     "./*.d.ts",
-    "./node_modules/@tghp/vitepress/types.d.ts"
   ]
 }
