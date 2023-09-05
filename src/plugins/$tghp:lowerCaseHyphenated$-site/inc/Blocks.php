@@ -54,12 +54,18 @@ class Blocks extends AbstractDefinesMetabox
      */
     public function setAllowedBlockTypes($allowedBlockTypes, $context): array
     {
+        $definedBlocks = array_map(function ($block) {
+            return "meta-box/{$block->getId()}";
+        }, $this->_getDefiners());
+
         return [
-            'core/image',
-            'core/paragraph',
-            'core/heading',
-            'core/list',
-            'core/embed',
+            ...$definedBlocks,
+            // Maybe also some of those
+//            'core/image',
+//            'core/paragraph',
+//            'core/heading',
+//            'core/list',
+//            'core/embed',
         ];
     }
 
