@@ -31,7 +31,7 @@ class ExampleBlock extends AbstractBlock
 
     public function getTitle(): string
     {
-        retrun strtoupper(mb_get_block_field('title'));
+        return strtoupper(mb_get_block_field('title'));
     }
 
 }
