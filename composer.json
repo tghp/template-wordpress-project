@@ -3,18 +3,6 @@
     "type": "project",
     "repositories": [
         {
-            "type": "composer",
-            "url": "https://packagist.org"
-        },
-        {
-            "type": "composer",
-            "url": "https://wpackagist.org"
-        },
-        {
-            "type": "composer",
-            "url": "https://packages.metabox.io/<API_KEY>"
-        },
-        {
             "type": "package",
             "package": {
                 "name": "kinsta/kinsta-mu-plugins",
@@ -25,6 +13,18 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "composer",
+            "url": "https://packagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://packages.metabox.io/<API_KEY>"
         }
     ],
     "require": {
