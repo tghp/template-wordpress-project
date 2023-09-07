@@ -66,9 +66,9 @@ abstract class AbstractBlock extends Abstract$tghp:classCase$ implements BlockDe
             if (is_admin()) {
                 wp_enqueue_style(
                     "block--{$this->getCode()}",
-                    sprintf('%s/assets/dist/css/block--%s.css', get_template_directory_uri(), $this->getCode()),
+                    sprintf('%s/assets/dist/block--%s.css', get_template_directory_uri(), $this->getCode()),
                     [],
-                    filemtime(sprintf('%s/assets/dist/css/block--%s.css', get_template_directory(), $this->getCode()))
+                    filemtime(sprintf('%s/assets/dist/block--%s.css', get_template_directory(), $this->getCode()))
                 );
             }
         };
