@@ -70,8 +70,8 @@ class Thing extends AbstractPostType
             /* @see https://developer.wordpress.org/resource/dashicons/#visibility */
             'menu_icon' => 'dashicons-default',
 //            'show_in_graphql' => true,
-//            'graphql_single_name' => preg_replace('/\s/g', '', $singular),
-//            'graphql_plural_name' => preg_replace('/\s/g', '', $singular),
+//            'graphql_single_name' => preg_replace('/\s/', '', $singular),
+//            'graphql_plural_name' => preg_replace('/\s/', '', $singular),
         ];
     }
 
