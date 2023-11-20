@@ -64,6 +64,22 @@ class Admin extends Abstract$tghp:classCase$
     /**
      * @return void
      */
+    public function preventMetaboxUpdateChecks()
+    {
+        add_action('admin_enqueue_scripts', function () {
+            wp_dequeue_script('mb-notification');
+        }, 100);
+
+        add_action('admin_head', function () {
+            echo '<style>#meta-box-notification { display: none !important; }</style>';
+        });
+
+        $this->$tghp:camelCase$->util->removeFiltersWithMethodName('init', 'enable_update', 1);
+    }
+
+    /**
+     * @return void
+     */
     public function preventWpApiCallsAndChecks()
     {
         if (!isset($_SERVER['APP_ENV']) || $_SERVER['APP_ENV'] !== 'local') {

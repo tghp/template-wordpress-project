@@ -8,6 +8,34 @@ use PHPHtmlParser\Dom\Node\AbstractNode;
 class Util extends Abstract$tghp:classCase$
 {
 
+    public function removeFiltersWithMethodName($hookName = '', $methodName = '', $priority = 0)
+    {
+        global $wp_filter;
+
+        // Take only filters on right hook name and priority
+        if (!isset($wp_filter[$hookName][$priority]) || !is_array($wp_filter[$hookName][$priority])) {
+            return false;
+        }
+
+        // Loop on filters registered
+        foreach ((array) $wp_filter[$hookName][$priority] as $unique_id => $filter_array) {
+            // Test if filter is an array ! (always for class/method)
+            if (isset($filter_array['function']) && is_array($filter_array['function'])) {
+                // Test if object is a class and method is equal to param !
+                if (is_object($filter_array['function'][0]) && get_class($filter_array['function'][0]) && $filter_array['function'][1] == $methodName) {
+                    // Test for WordPress >= 4.7 WP_Hook class (https://make.wordpress.org/core/2016/09/08/wp_hook-next-generation-actions-and-filters/)
+                    if (is_a($wp_filter[$hookName], 'WP_Hook')) {
+                        unset($wp_filter[$hookName]->callbacks[$priority][$unique_id]);
+                    } else {
+                        unset($wp_filter[$hookName][$priority][$unique_id]);
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
     public function formatPathForEnvironments($path)
     {
         if (isset($_SERVER['KINSTA_CACHE_ZONE']) || isset($_SERVER['HTTP_X_KINSTA_EDGE_INCOMINGIP'])) {
