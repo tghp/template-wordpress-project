@@ -1,5 +1,8 @@
 import vitepress from '@tghp/vitepress';
 
-export default vitepress({
+const vitepressInstance: ReturnType<typeof vitepress> = vitepress({
   root: __dirname,
+  preact: true,
 });
+
+export default vitepressInstance;
