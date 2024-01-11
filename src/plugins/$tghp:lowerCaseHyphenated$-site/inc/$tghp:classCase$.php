@@ -23,6 +23,9 @@ class $tghp:classCase$
     /** @var Taxonomy */
     public $taxonomy;
 
+    /** @var Page */
+    public $page;
+
     /** @var Menu */
     public $menu;
 
@@ -91,6 +94,7 @@ class $tghp:classCase$
        $this->blocks = new Blocks($this);
        $this->postType = new PostType($this);
        $this->taxonomy = new Taxonomy($this);
+       $this->page = new Page($this);
        $this->menu = new Menu($this);
        $this->asset = new Asset($this);
        $this->enqueues = new Enqueues($this);
