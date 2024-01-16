@@ -2,8 +2,10 @@
 
 namespace TGHP\$tghp:classCase$\Metaboxio;
 
-use TGHP\$tghp:classCase$\Metaboxio\MetaboxDefinerInterface;
-use TGHP\$tghp:classCase$\Metaboxio\MetaboxPreparerInterface;
+use TGHP\$tghp:classCase$\AbstractDefines;
+use TGHP\$tghp:classCase$\DefinerInterface;
+use TGHP\$tghp:classCase$\Metaboxio\Metabox\MetaboxDefinerInterface;
+use TGHP\$tghp:classCase$\Metaboxio\Metabox\MetaboxPreparerInterface;
 
 abstract class AbstractDefinesMetabox extends AbstractDefines
 {

@@ -21,6 +21,11 @@ class Form
         add_filter('tghpcontact_forms', [$this, 'addForms']);
     }
 
+    /**
+     * Create definers
+     *
+     * @return array
+     */
     public function getDefiners()
     {
         if (!$this->definers) {

@@ -3,6 +3,7 @@
 namespace TGHP\$tghp:classCase$\Metaboxio;
 
 use TGHP\$tghp:classCase$\$tghp:classCase$;
+use TGHP\$tghp:classCase$\DefinerInterface;
 use TGHP\$tghp:classCase$\Metaboxio\Block\BlockDefinerInterface;
 
 class Block extends AbstractDefinesMetabox
@@ -20,9 +21,28 @@ class Block extends AbstractDefinesMetabox
         add_filter('allowed_block_types_all', [$this, 'setAllowedBlockTypes'], 10, 2);
     }
 
+    /**
+     * Create definers
+     *
+     * @return array
+     */
     protected function _getDefiners()
     {
         return [];
+    }
+
+    /**
+     * Implementation definer for metaboxes
+     * @param DefinerInterface $definer
+     */
+    protected function _processDefiner(DefinerInterface $definer)
+    {
+        if ( !($definer instanceof BlockDefinerInterface) ) {
+            return;
+        }
+
+        /** @var MetaboxDefinerInterface $definer */
+        return $definer->define();
     }
 
     /**
