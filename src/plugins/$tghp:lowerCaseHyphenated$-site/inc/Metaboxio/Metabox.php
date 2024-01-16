@@ -156,7 +156,7 @@ class Metabox extends AbstractDefinesMetabox
     {
         $values = [];
 
-        foreach ($field_ids as $field) {
+        foreach ($fieldIds as $field) {
             $key = $field;
             $value = $this->getSingleMetafieldValue($key, $args, $postId);
             $values[$key] = !empty($value) ? $value : false;
