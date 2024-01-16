@@ -1,6 +1,6 @@
 <?php
 
-namespace TGHP TGHP\$tghp:classCase$\Metaboxio;
+namespace TGHP\$tghp:classCase$\Metaboxio;
 
 use TGHP\$tghp:classCase$\Metaboxio\Form\FormAfterSubmissionProcessorInterface;
 use TGHP\$tghp:classCase$\Metaboxio\Form\FormDefinerInterface;
