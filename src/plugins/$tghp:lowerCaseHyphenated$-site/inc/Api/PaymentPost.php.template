@@ -1,0 +1,43 @@
+<?php
+
+namespace TGHP\$tghp:classCase$\Api;
+
+use TGHP\$tghp:classCase$\Abstract$tghp:classCase$;
+
+class ExamplePost extends Abstract$tghp:classCase$ implements ApiDefinerInterface
+{
+
+    public function getRoute()
+    {
+        return '/example/';
+    }
+
+    public function getType()
+    {
+        return 'POST';
+    }
+
+    /**
+     * @param \WP_REST_Request $data
+     * @return int|string|array|\WP_REST_Response
+     */
+    public function handle($data)
+    {
+        $response = new \WP_REST_Response();
+
+        $params = json_decode($data->get_body(), ARRAY_A);
+
+        if (!empty($params['test'])) {
+            $response->set_data([
+                'test' => $params['test']
+            ]);
+        } else {
+            $response->set_data([
+                'hello' => 'world',
+            ]);
+        }
+
+        return $response;
+    }
+
+}
