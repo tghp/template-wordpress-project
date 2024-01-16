@@ -1,8 +1,8 @@
 <?php
 
-namespace TGHP\$tghp:classCase$\Form;
+namespace TGHP\$tghp:classCase$\Metaboxio\Form;
 
-use TGHP\$tghp:classCase$\Metabox;
+use TGHP\$tghp:classCase$\Metaboxio\Metabox;
 
 class BasicForm implements FormDefinerInterface
 {

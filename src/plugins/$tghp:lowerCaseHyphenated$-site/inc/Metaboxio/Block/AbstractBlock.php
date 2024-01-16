@@ -1,10 +1,10 @@
 <?php
 
-namespace TGHP\$tghp:classCase$\Blocks;
+namespace TGHP\$tghp:classCase$\Metaboxio\Block;
 
 use TGHP\$tghp:classCase$\Abstract$tghp:classCase$;
 use TGHP\$tghp:classCase$\$tghp:classCase$;
-use TGHP\$tghp:classCase$\Metabox\MetaboxDefinerInterface;
+use TGHP\$tghp:classCase$\Metaboxio\Metabox\MetaboxDefinerInterface;
 
 abstract class AbstractBlock extends Abstract$tghp:classCase$ implements BlockDefinerInterface, MetaboxDefinerInterface
 {
@@ -68,7 +68,7 @@ abstract class AbstractBlock extends Abstract$tghp:classCase$ implements BlockDe
                     "block--{$this->getCode()}",
                     sprintf('%s/assets/dist/block--%s.css', get_template_directory_uri(), $this->getCode()),
                     [],
-                    filemtime(sprintf('%s/assets/dist/block--%s.css', get_template_directory(), $this->getCode()))
+                    @filemtime(sprintf('%s/assets/dist/block--%s.css', get_template_directory(), $this->getCode()))
                 );
             }
         };

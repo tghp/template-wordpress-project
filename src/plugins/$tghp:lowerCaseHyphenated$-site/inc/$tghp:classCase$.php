@@ -4,24 +4,40 @@ namespace TGHP\$tghp:classCase$;
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+use Metaboxio\Block;
+use Metaboxio\Metabox;
+use Metaboxio\Form;
 
 class $tghp:classCase$
 {
 
-    /** @var ThemeSupports */
-    public $themeSupports;
+    /** =====================================================================================================
+     * Class properties
+     * ======================================================================================================
+     */
+
+    /**
+     * Definers
+     */
 
     /** @var Metabox */
     public $metabox;
 
-    /** @var Blocks */
-    public $blocks;
+    /** @var Block */
+    public $block;
 
     /** @var PostType */
     public $postType;
 
     /** @var Taxonomy */
     public $taxonomy;
+
+    /**
+     * Theme specific
+     */
+
+    /** @var ThemeSupports */
+    public $themeSupports;
 
     /** @var Page */
     public $page;
@@ -32,17 +48,80 @@ class $tghp:classCase$
     /** @var Enqueues */
     public $enqueues;
 
+    /**
+     * Admin
+     */
+
+    /** @var Admin */
+    public $admin;
+
+    /**
+     * Utilities
+     */
+
     /** @var Asset */
     public $asset;
 
     /** @var Util */
     public $util;
 
-    /** @var Admin */
-    public $admin;
+    /**
+     * Development / Workflow
+     */
 
     /** @var Dev */
     public $dev;
+
+    /**
+     * $tghp:standard$ Specific
+     */
+
+    // Class properties here
+
+    /** =====================================================================================================
+     * $tghp:classCase$ logic
+     * ======================================================================================================
+     */
+
+    /**
+     * $tghp:classCase$ constructor.
+     */
+    public function __construct()
+    {
+        /**
+         * Setup
+         */
+        $this->setupLogging();
+        spl_autoload_register([$this, 'autoload']);
+
+        /**
+         * Class property initialisation
+         */
+        // Definers
+        $this->metabox = new Metabox($this);
+        $this->block = new Block($this);
+        $this->postType = new PostType($this);
+        $this->taxonomy = new Taxonomy($this);
+
+        // Theme specific
+        $this->themeSupports = new ThemeSupports($this);
+        $this->page = new Page($this);
+        $this->menu = new Menu($this);
+        $this->enqueues = new Enqueues($this);
+
+        // Admin
+        $this->admin = new Admin($this);
+
+        // Utilities
+        $this->asset = new Asset($this);
+        $this->util = new Util($this);
+
+        // Development / Workflow
+        $this->dev = new Dev($this);
+
+        // $tghp:standard$ Specific
+        // Class property initialisation here
+    }
 
     /**
      * @var Logger
@@ -80,28 +159,6 @@ class $tghp:classCase$
 
         return self::$_instance;
     }
-
-   /**
-    * Site constructor.
-    */
-   public function __construct()
-   {
-       $this->setupLogging();
-
-       spl_autoload_register([$this, 'autoload']);
-       $this->themeSupports = new ThemeSupports($this);
-       $this->metabox = new Metabox($this);
-       $this->blocks = new Blocks($this);
-       $this->postType = new PostType($this);
-       $this->taxonomy = new Taxonomy($this);
-       $this->page = new Page($this);
-       $this->menu = new Menu($this);
-       $this->asset = new Asset($this);
-       $this->enqueues = new Enqueues($this);
-       $this->util = new Util($this);
-       $this->admin = new Admin($this);
-       $this->dev = new Dev($this);
-   }
 
    /**
     * Set up logging

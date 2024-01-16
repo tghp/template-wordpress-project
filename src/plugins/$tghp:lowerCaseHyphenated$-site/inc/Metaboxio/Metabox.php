@@ -1,6 +1,8 @@
 <?php
 
-namespace TGHP\$tghp:classCase$;
+namespace TGHP\$tghp:classCase$\Metaboxio;
+
+use TGHP\$tghp:classCase$;
 
 class Metabox extends AbstractDefinesMetabox
 {

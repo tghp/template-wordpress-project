@@ -29,6 +29,7 @@ require TGHP_$tghp:upperCaseUnderscored$_PLUGIN_PATH . '/inc/$tghp:classCase$.ph
 /**
  * Return $tghp:classCase$ instance
  *
+ * @deprecated Prefer TGHPSite() function
  * @return \TGHP\$tghp:classCase$\$tghp:classCase$
  */
 function TGHP$tghp:classCase$()
@@ -48,6 +49,14 @@ function TGHP$tghp:classCase$()
 function TGHPSite()
 {
     return TGHP$tghp:classCase$();
+}
+
+/**
+ * @return \TGHP\$tghp:classCase$\$tghp:classCase$\Metaboxio\Metabox
+ */
+function TGHPSiteMetabox()
+{
+    return TGHPSite()->metabox;
 }
 
 TGHP$tghp:classCase$();

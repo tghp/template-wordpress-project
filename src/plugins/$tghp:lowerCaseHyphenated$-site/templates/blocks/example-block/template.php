@@ -1,6 +1,6 @@
 <?php
 /**
- * @var $block TGHP\$tghp:classCase$\Blocks\ExampleBlock
+ * @var $block TGHP\$tghp:classCase$\Block\ExampleBlock
  */
 
 $blockClassName = $block->getCode();

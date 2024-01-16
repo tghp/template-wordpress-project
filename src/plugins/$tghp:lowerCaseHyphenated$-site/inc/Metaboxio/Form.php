@@ -1,11 +1,11 @@
 <?php
 
-namespace TGHP\$tghp:classCase$;
+namespace TGHP TGHP\$tghp:classCase$\Metaboxio;
 
-use TGHP\$tghp:classCase$\Form\Contact;
-use TGHP\$tghp:classCase$\Form\FormAfterSubmissionProcessorInterface;
-use TGHP\$tghp:classCase$\Form\FormDefinerInterface;
-use TGHP\$tghp:classCase$\Form\Newsletter;
+use TGHP\$tghp:classCase$\Metaboxio\Form\Contact;
+use TGHP\$tghp:classCase$\Metaboxio\Form\FormAfterSubmissionProcessorInterface;
+use TGHP\$tghp:classCase$\Metaboxio\Form\FormDefinerInterface;
+use TGHP\$tghp:classCase$\Metaboxio\Form\Newsletter;
 
 class Form
 {

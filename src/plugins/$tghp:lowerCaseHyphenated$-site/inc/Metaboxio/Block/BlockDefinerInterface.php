@@ -1,6 +1,6 @@
 <?php
 
-namespace TGHP\$tghp:classCase$\Blocks;
+namespace TGHP\$tghp:classCase$\Metaboxio\Block;
 
 use TGHP\$tghp:classCase$\DefinerInterface;
 

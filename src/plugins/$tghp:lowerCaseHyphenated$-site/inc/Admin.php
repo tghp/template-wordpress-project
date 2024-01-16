@@ -2,8 +2,8 @@
 
 namespace TGHP\$tghp:classCase$;
 
-use TGHP\$tghp:classCase$\Metabox\MetaboxDefinerInterface;
-use TGHP\$tghp:classCase$\Metabox\MetaboxPreparerInterface;
+use TGHP\$tghp:classCase$\Metaboxio\Metabox\MetaboxDefinerInterface;
+use TGHP\$tghp:classCase$\Metaboxio\Metabox\MetaboxPreparerInterface;
 
 class Admin extends Abstract$tghp:classCase$
 {

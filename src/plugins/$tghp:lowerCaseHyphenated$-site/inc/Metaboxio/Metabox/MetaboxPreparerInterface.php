@@ -1,6 +1,6 @@
 <?php
 
-namespace TGHP\$tghp:classCase$\Metabox;
+namespace TGHP\$tghp:classCase$\Metaboxio\Metabox;
 
 interface MetaboxPreparerInterface
 {

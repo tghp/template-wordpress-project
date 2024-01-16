@@ -1,9 +1,9 @@
 <?php
 
-namespace TGHP\$tghp:classCase$;
+namespace TGHP\$tghp:classCase$\Metaboxio;
 
-use TGHP\$tghp:classCase$\Metabox\MetaboxDefinerInterface;
-use TGHP\$tghp:classCase$\Metabox\MetaboxPreparerInterface;
+use TGHP\$tghp:classCase$\Metaboxio\MetaboxDefinerInterface;
+use TGHP\$tghp:classCase$\Metaboxio\MetaboxPreparerInterface;
 
 abstract class AbstractDefinesMetabox extends AbstractDefines
 {

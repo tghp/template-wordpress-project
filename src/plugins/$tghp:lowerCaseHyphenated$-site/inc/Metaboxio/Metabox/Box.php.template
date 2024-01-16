@@ -1,8 +1,8 @@
 <?php
 
-namespace TGHP\$tghp:classCase$\Metabox;
+namespace TGHP\$tghp:classCase$\Metaboxio\Metabox;
 
-use TGHP\$tghp:classCase$\Metabox;
+use TGHP\$tghp:classCase$\Metaboxio\Metabox;
 
 class Box extends AbstractMetabox implements MetaboxDefinerInterface
 {
