@@ -2,7 +2,7 @@
 
 namespace TGHP\$tghp:classCase$\Metaboxio;
 
-use TGHP\$tghp:classCase$;
+use TGHP\$tghp:classCase$\$tghp:classCase$;
 
 class Metabox extends AbstractDefinesMetabox
 {

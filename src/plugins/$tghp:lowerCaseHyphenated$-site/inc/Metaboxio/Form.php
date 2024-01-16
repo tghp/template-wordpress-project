@@ -2,6 +2,7 @@
 
 namespace TGHP\$tghp:classCase$\Metaboxio;
 
+use TGHP\$tghp:classCase$\$tghp:classCase$;
 use TGHP\$tghp:classCase$\Metaboxio\Form\FormAfterSubmissionProcessorInterface;
 use TGHP\$tghp:classCase$\Metaboxio\Form\FormDefinerInterface;
 
@@ -10,6 +11,11 @@ class Form
 
     protected $definers = [];
 
+    /**
+     * Form constructor.
+     *
+     * @param $tghp:classCase$ $$tghp:camelCase$
+     */
     public function __construct()
     {
         add_filter('tghpcontact_forms', [$this, 'addForms']);

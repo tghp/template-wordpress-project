@@ -2,13 +2,14 @@
 
 namespace TGHP\$tghp:classCase$\Metaboxio;
 
+use TGHP\$tghp:classCase$\$tghp:classCase$;
 use TGHP\$tghp:classCase$\Metaboxio\Block\BlockDefinerInterface;
 
 class Block extends AbstractDefinesMetabox
 {
 
     /**
-     * Blocks constructor.
+     * Block constructor.
      *
      * @param $tghp:classCase$ $$tghp:camelCase$
      */
