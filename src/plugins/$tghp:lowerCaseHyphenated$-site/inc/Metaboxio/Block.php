@@ -3,7 +3,6 @@
 namespace TGHP\$tghp:classCase$\Metaboxio;
 
 use TGHP\$tghp:classCase$\Metaboxio\Block\BlockDefinerInterface;
-use TGHP\$tghp:classCase$\Metaboxio\Block\CaseStudySingle;
 
 class Block extends AbstractDefinesMetabox
 {
