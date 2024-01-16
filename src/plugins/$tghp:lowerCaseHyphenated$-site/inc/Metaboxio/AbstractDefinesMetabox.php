@@ -2,6 +2,7 @@
 
 namespace TGHP\$tghp:classCase$\Metaboxio;
 
+use TGHP\$tghp:classCase$\$tghp:classCase$;
 use TGHP\$tghp:classCase$\AbstractDefines;
 use TGHP\$tghp:classCase$\DefinerInterface;
 use TGHP\$tghp:classCase$\Metaboxio\Metabox\MetaboxDefinerInterface;
