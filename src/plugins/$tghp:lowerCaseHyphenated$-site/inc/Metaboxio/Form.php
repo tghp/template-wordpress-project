@@ -2,10 +2,8 @@
 
 namespace TGHP TGHP\$tghp:classCase$\Metaboxio;
 
-use TGHP\$tghp:classCase$\Metaboxio\Form\Contact;
 use TGHP\$tghp:classCase$\Metaboxio\Form\FormAfterSubmissionProcessorInterface;
 use TGHP\$tghp:classCase$\Metaboxio\Form\FormDefinerInterface;
-use TGHP\$tghp:classCase$\Metaboxio\Form\Newsletter;
 
 class Form
 {
