@@ -41,7 +41,7 @@ class Block extends AbstractDefinesMetabox
             return;
         }
 
-        /** @var MetaboxDefinerInterface $definer */
+        /** @var BlockDefinerInterface $definer */
         return $definer->define();
     }
 
