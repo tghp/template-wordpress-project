@@ -3,8 +3,6 @@
 namespace TGHP\$tghp:classCase$;
 
 use TGHP\$tghp:classCase$\Api\ApiDefinerInterface;
-use TGHP\$tghp:classCase$\Api\PaymentPost;
-use TGHP\$tghp:classCase$\Api\PaymentWebhookPost;
 
 class Api extends Abstract$tghp:classCase$
 {
@@ -40,7 +38,7 @@ class Api extends Abstract$tghp:classCase$
             foreach ($definers as $_definer) {
                 /** @var ApiDefinerInterface $_definer */
 
-                register_rest_route('$tghp:lowerCaseJoined$/v1', $_definer->getRoute(), [
+                register_rest_route('$tghp:lowerCaseHyphenated$/v1', $_definer->getRoute(), [
                     'methods' => $_definer->getType(),
                     'callback' => [$_definer, 'handle'],
                 ]);
