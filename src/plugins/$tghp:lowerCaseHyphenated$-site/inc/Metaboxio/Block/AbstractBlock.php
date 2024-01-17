@@ -3,7 +3,6 @@
 namespace TGHP\$tghp:classCase$\Metaboxio\Block;
 
 use TGHP\$tghp:classCase$\Abstract$tghp:classCase$;
-use TGHP\$tghp:classCase$\$tghp:classCase$;
 use TGHP\$tghp:classCase$\Metaboxio\Metabox\MetaboxDefinerInterface;
 
 abstract class AbstractBlock extends Abstract$tghp:classCase$ implements BlockDefinerInterface, MetaboxDefinerInterface
