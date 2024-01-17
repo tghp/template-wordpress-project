@@ -3,13 +3,12 @@
 namespace TGHP\$tghp:classCase$\Metaboxio;
 
 use TGHP\$tghp:classCase$\$tghp:classCase$;
+use TGHP\$tghp:classCase$\AbstractDefines;
 use TGHP\$tghp:classCase$\Metaboxio\Form\FormAfterSubmissionProcessorInterface;
 use TGHP\$tghp:classCase$\Metaboxio\Form\FormDefinerInterface;
 
-class Form
+class Form extends AbstractDefines
 {
-
-    protected $definers = [];
 
     /**
      * Form constructor.
@@ -26,13 +25,11 @@ class Form
      *
      * @return array
      */
-    public function getDefiners()
+    public function _getDefiners()
     {
-        if (!$this->definers) {
-            $this->definers = [];
-        }
-
-        return $this->definers;
+        return [
+            // Definer classes here
+        ];
     }
 
     public function addForms($forms)
