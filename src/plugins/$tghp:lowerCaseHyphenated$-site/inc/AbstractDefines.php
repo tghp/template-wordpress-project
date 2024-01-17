@@ -38,7 +38,9 @@ abstract class AbstractDefines extends Abstract$tghp:classCase$
         $definers = $this->_getDefiners();
 
         // Allow hooks
-        $definers = apply_filters('tghp_metabox_add_definers', $definers, $this->$tghp:camelCase$);
+        $definers = apply_filters('tghp_add_definers', $definers);
+        $class = strtolower(get_class($this));
+        $definers = apply_filters("tghp_add_definers_{$class}", $definers);
 
         return $definers;
     }
