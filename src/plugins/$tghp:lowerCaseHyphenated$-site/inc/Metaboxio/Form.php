@@ -15,8 +15,9 @@ class Form extends AbstractDefines
      *
      * @param $tghp:classCase$ $$tghp:camelCase$
      */
-    public function __construct()
+    public function __construct($tghp:classCase$ $$tghp:camelCase$)
     {
+        parent::__construct($$tghp:camelCase$);
         add_filter('tghpcontact_forms', [$this, 'addForms']);
     }
 
@@ -32,6 +33,26 @@ class Form extends AbstractDefines
         ];
     }
 
+    /**
+     * Implementation definer for forms
+     * @param DefinerInterface $definer
+     */
+    protected function _processDefiner(DefinerInterface $definer)
+    {
+        if ( !($definer instanceof FormDefinerInterface) ) {
+            return;
+        }
+
+        /** @var FormDefinerInterface $definer */
+        return $definer->define();
+    }
+
+    /**
+     * Actually add forms that come from our definers
+     *
+     * @param $forms
+     * @return array
+     */
     public function addForms($forms)
     {
         foreach ($this->getDefiners() as $_definer) {
