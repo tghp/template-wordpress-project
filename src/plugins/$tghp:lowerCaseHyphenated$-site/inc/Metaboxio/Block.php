@@ -34,7 +34,7 @@ class Block extends AbstractDefinesMetabox
     }
 
     /**
-     * Implementation definer for metaboxes
+     * Implementation definer for blocks
      * @param DefinerInterface $definer
      */
     protected function _processDefiner(DefinerInterface $definer)
