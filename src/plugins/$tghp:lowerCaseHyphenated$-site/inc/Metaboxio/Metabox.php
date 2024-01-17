@@ -147,7 +147,7 @@ class Metabox extends AbstractDefinesMetabox
     /**
      * Get multiple metafield values
      *
-     * @param array $field_ids
+     * @param array $fieldIds
      * @param array $args
      * @param null $postId
      * @return array
@@ -168,7 +168,7 @@ class Metabox extends AbstractDefinesMetabox
     /**
      * Get single metafield value from options page
      *
-     * @param string $field_id
+     * @param string $fieldId
      * @return mixed
      */
     public function getSingleMetafieldValueFromOptions(string $fieldId)
@@ -183,7 +183,7 @@ class Metabox extends AbstractDefinesMetabox
     /**
      * Get multiple metafield values from options page
      *
-     * @param array $field_ids
+     * @param array $fieldIds
      * @return mixed
      */
     public function getMultipleMetafieldValueFromOptions(array $fieldIds)
