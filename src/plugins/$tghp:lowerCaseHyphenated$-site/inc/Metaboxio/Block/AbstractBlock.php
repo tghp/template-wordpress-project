@@ -14,7 +14,7 @@ abstract class AbstractBlock extends Abstract$tghp:classCase$ implements BlockDe
      * e.g. ExampleBlock -> example-block
      *
      * @return string
-     * @throws ReflectionException
+     * @throws \ReflectionException
      */
     public function getCode(): string
     {
