@@ -28,7 +28,9 @@ class Block extends AbstractDefinesMetabox
      */
     protected function _getDefiners()
     {
-        return [];
+        return [
+            // Definer classes here
+        ];
     }
 
     /**
