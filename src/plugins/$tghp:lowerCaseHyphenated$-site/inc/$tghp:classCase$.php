@@ -100,9 +100,9 @@ class $tghp:classCase$
         // Definers
         $this->postType = new PostType($this);
         $this->taxonomy = new Taxonomy($this);
-        $this->metabox = new Metabox($this);
-        $this->block = new Block($this);
-        $this->form = new Form($this);
+        $this->metabox = new Metaboxio\Metabox($this);
+        $this->block = new Metaboxio\Block($this);
+        $this->form = new Metaboxio\Form($this);
 
         // Theme specific
         $this->themeSupports = new ThemeSupports($this);
