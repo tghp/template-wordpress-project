@@ -4,9 +4,6 @@ namespace TGHP\$tghp:classCase$;
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-use Metaboxio\Block;
-use Metaboxio\Metabox;
-use Metaboxio\Form;
 
 class $tghp:classCase$
 {
@@ -20,17 +17,20 @@ class $tghp:classCase$
      * Definers
      */
 
-    /** @var Metabox */
-    public $metabox;
-
-    /** @var Block */
-    public $block;
-
     /** @var PostType */
     public $postType;
 
     /** @var Taxonomy */
     public $taxonomy;
+
+    /** @var Metaboxio\Metabox */
+    public $metabox;
+
+    /** @var Metaboxio\Block */
+    public $block;
+
+    /** @var Metaboxio\Form */
+    public $form;
 
     /**
      * Theme specific
@@ -98,10 +98,11 @@ class $tghp:classCase$
          * Class property initialisation
          */
         // Definers
-        $this->metabox = new Metabox($this);
-        $this->block = new Block($this);
         $this->postType = new PostType($this);
         $this->taxonomy = new Taxonomy($this);
+        $this->metabox = new Metabox($this);
+        $this->block = new Block($this);
+        $this->form = new Form($this);
 
         // Theme specific
         $this->themeSupports = new ThemeSupports($this);
