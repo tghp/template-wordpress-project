@@ -28,15 +28,15 @@
         }
     ],
     "require": {
-        "johnpbloch/wordpress": "^6",
+        "johnpbloch/wordpress": "$tghp:composer:johnpbloch/wordpress@latest$",
         "tghp/wp-composer-clean": "^2.1",
-        "vlucas/phpdotenv": "^5",
+        "vlucas/phpdotenv": "$tghp:composer:vlucas/phpdotenv@latest$",
         "kinsta/kinsta-mu-plugins": "^3.0",
-        "wpackagist-plugin/meta-box": "^5",
-        "wpackagist-plugin/wordfence": "^7",
-        "wpackagist-plugin/sar-friendly-smtp": "^1",
-        "wpackagist-plugin/svg-support": "^2.3",
-        "wpackagist-plugin/wordpress-seo": "^22",
+        "wpackagist-plugin/meta-box": "$tghp:wpackagist:wpackagist-plugin/meta-box@latest$",
+        "wpackagist-plugin/wordfence": "$tghp:wpackagist:wpackagist-plugin/wordfence@latest$",
+        "wpackagist-plugin/sar-friendly-smtp": "$tghp:wpackagist:wpackagist-plugin/sar-friendly-smtp@latest$",
+        "wpackagist-plugin/svg-support": "$tghp:wpackagist:wpackagist-plugin/svg-support@latest$",
+        "wpackagist-plugin/wordpress-seo": "$tghp:wpackagist:wpackagist-plugin/wordpress-seo@latest$",
         "meta-box/meta-box-aio": "dev-master",
         "monolog/monolog": "^2"
     },
