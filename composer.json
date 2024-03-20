@@ -36,6 +36,7 @@
         "wpackagist-plugin/wordfence": "^7",
         "wpackagist-plugin/sar-friendly-smtp": "^1",
         "wpackagist-plugin/svg-support": "^2.3",
+        "wpackagist-plugin/wordpress-seo": "^22",
         "meta-box/meta-box-aio": "dev-master",
         "monolog/monolog": "^2"
     },
