@@ -28,9 +28,9 @@
         }
     ],
     "require": {
-        "johnpbloch/wordpress": "$tghp:composer:johnpbloch/wordpress@latest$",
+        "johnpbloch/wordpress": "$tghp:packagist:johnpbloch/wordpress@latest$",
         "tghp/wp-composer-clean": "^2.1",
-        "vlucas/phpdotenv": "$tghp:composer:vlucas/phpdotenv@latest$",
+        "vlucas/phpdotenv": "$tghp:packagist:vlucas/phpdotenv@latest$",
         "kinsta/kinsta-mu-plugins": "^3.0",
         "wpackagist-plugin/meta-box": "$tghp:wpackagist:wpackagist-plugin/meta-box@latest$",
         "wpackagist-plugin/wordfence": "$tghp:wpackagist:wpackagist-plugin/wordfence@latest$",
