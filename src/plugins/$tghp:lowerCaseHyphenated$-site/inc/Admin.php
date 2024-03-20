@@ -87,6 +87,8 @@ class Admin extends Abstract$tghp:classCase$
                 if (preg_match('#api\.wordpress\.org#', $url)) {
                     return true;
                 }
+
+                return false;
             }, 10, 3);
 
             /*
