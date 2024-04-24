@@ -156,14 +156,41 @@ if (!defined( 'ABSPATH')) {
 }
 
 /**
+ * Infra
+ */
+
+$wpContentUrl = $_ENV['WP_CONTENT_URL'];
+
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+}
+
+if (isset($_SERVER['HTTP_X_FORWARDED_HOST']) && str_contains($_SERVER['HTTP_X_FORWARDED_HOST'], 'ngrok')) {
+    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+        $serverProto = 'https://';
+    } else {
+        $serverProto = 'http://';
+    }
+
+    $ngrokHost = $_SERVER['HTTP_X_FORWARDED_HOST'];
+    $maskedHost = $_SERVER['HTTP_HOST'];
+    $wpContentUrl = str_replace($maskedHost, $ngrokHost, $wpContentUrl);
+    define('.COOKIE_DOMAIN.', $ngrokHost);
+    define('.SITECOOKIEPATH.', '.');
+    define('WP_SITEURL', $serverProto . $ngrokHost . '/wp');
+    define('WP_HOME', $serverProto . $ngrokHost);
+    $_SERVER['HTTP_HOST'] = $ngrokHost;
+    $_SERVER['SERVER_ADDR'] = $ngrokHost;
+    $_SERVER['REMOTE_ADDR'] = WP_HOME;
+
+    define('NGROK_TUNNEL_ACTIVE', true);
+}
+
+/**
  * Define wp-content directory
  */
 define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content');
 define('WP_CONTENT_URL', $_ENV['WP_CONTENT_URL']);
-
-if(isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) === 'https') {
-    $_SERVER['HTTPS'] = 'on';
-}
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
