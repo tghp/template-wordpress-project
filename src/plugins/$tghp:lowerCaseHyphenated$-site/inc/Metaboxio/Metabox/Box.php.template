@@ -43,7 +43,7 @@ class Box extends AbstractMetabox implements MetaboxDefinerInterface
                     'name' => 'Content',
                     'type' => 'wyiswyg',
                     'options' => [
-                        'tinymce' => [...$this->getStrippedTinymceConfig(['toolbar1' => 'bullist,numlist')]
+                        'tinymce' => [...$this->getStrippedTinymceConfig(['toolbar1' => 'bullist,numlist'])]
                     ]
                 ],
             ],
