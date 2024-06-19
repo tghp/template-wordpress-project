@@ -51,7 +51,7 @@ if (isset($_ENV['DB_CHARSET'])) {
 if (isset($_ENV['DB_COLLATE'])) {
     define('DB_COLLATE', $_ENV['DB_COLLATE']);
 } else {
-    define('DB_COLLATE', 'utf8');
+    define('DB_COLLATE', '');
 }
 
 /**#@+
