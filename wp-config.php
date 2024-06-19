@@ -63,14 +63,8 @@ if (isset($_ENV['DB_COLLATE'])) {
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'VpAy)9,l?j)vVJPM>IV1ae~VR;i<0O5,B3XPsYJuhTsH^=j*7q2TsvBVTW _Udl;');
-define('SECURE_AUTH_KEY',  'w!>15^#q8e|4/|[1BQ=6sDW:VJzvnI39 A?[/jiu+GvCYVo?gk/`l[RdB]%Lb=%T');
-define('LOGGED_IN_KEY',    '.-[(;3N0UZD:^=UWR|zmDroAgm=[gSI8`r-YrC-kG /._+,:eNHgDfV(Za=J8Uad');
-define('NONCE_KEY',        'IfK/N(GZ|~,;%wYhbZwdG.D]J[:$c0iq2.IQvigD3T,R[i|!D(`P7B6vsNbi!+^*');
-define('AUTH_SALT',        ')eizB+)+E0<G..E]W=.1do|J|%viCvW||Zbrh*G-c0>87Qt+-XTIUpX1fG$;P(Ey');
-define('SECURE_AUTH_SALT', 'sgJRu:?=l*#:WF(T,w9L-QdW03>Cd-M5JXFtBHX DU?u*x-A,|cG19RMkD];o0vh');
-define('LOGGED_IN_SALT',   'ou83K5GmV|4$SG|`]i4|!pko*6-(|r@k {umQmjJ)T>m/|+CP<4JC-KWTn1`G)ub');
-define('NONCE_SALT',       'g^6jBOoD,DgqE+v`veU%e4e*ZU)SnQLT/hR7v> alIt^ypO6Gcs1DGb[`%Bq*g`~');
+// Replace these two lines with unique keys and salts, as per above
+die('Please go to wp-config.php and replace the salts with unique keys and salts from https://api.wordpress.org/secret-key/1.1/salt/');
 
 /**#@-*/
 
