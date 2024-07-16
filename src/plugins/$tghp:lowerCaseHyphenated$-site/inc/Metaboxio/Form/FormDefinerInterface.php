@@ -2,7 +2,9 @@
 
 namespace TGHP\$tghp:classCase$\Metaboxio\Form;
 
-interface FormDefinerInterface
+user TGHP\$tghp:classCase$\DefinerInterface;
+
+interface FormDefinerInterface extends DefinerInterface
 {
 
     /**
@@ -13,6 +15,6 @@ interface FormDefinerInterface
     /**
      * @return array
      */
-    public function define();
+    public function define(): array;
 
 }

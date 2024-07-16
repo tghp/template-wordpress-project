@@ -18,7 +18,7 @@ class BasicForm implements FormDefinerInterface
     /**
      * @inheritDoc
      */
-    public function define()
+    public function define(): array
     {
         return [
             'title' => __('Basic Form'),
