@@ -45,7 +45,11 @@ class Form extends AbstractDefines
         }
 
         /** @var FormDefinerInterface $definer */
-        return $definer->define();
+
+        return [
+            'form_name' => $definer->getName(),
+            ...$definer->define(),
+        ];
     }
 
     /**
@@ -56,13 +60,13 @@ class Form extends AbstractDefines
      */
     public function addForms($forms)
     {
-        foreach ($this->getDefiners() as $_definer) {
-            /** @var FormDefinerInterface $_definer */
-            $name = $_definer->getName();
-            $forms[$name] = $_definer->define();
+        foreach ($this->definerResults as $definerResult) {
+            $name = $definerResult['form_name'];
+            /** @var FormDefinerInterface $definerResult */
+            $forms[$name] = $definerResult;
 
-            if ($_definer instanceof FormAfterSubmissionProcessorInterface) {
-                add_action("tghpcontact_after_process_{$name}", [$_definer, 'afterProcess']);
+            if ($definerResult instanceof FormAfterSubmissionProcessorInterface) {
+                add_action("tghpcontact_after_process_{$name}", [$definerResult, 'afterProcess']);
             }
         }
 
