@@ -15,7 +15,9 @@ abstract class AbstractDefines extends Abstract$tghp:classCase$
         parent::__construct($$tghp:camelCase$);
 
         // Run the definers now, gathering the defined metaboxes
-        $this->processDefiners();
+        add_action('init', function () {
+            $this->processDefiners();
+        }, 1);
     }
 
     /**
