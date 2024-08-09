@@ -138,10 +138,13 @@ class Metabox extends AbstractDefinesMetabox
     public function getSingleMetafieldValue(string $field_id, array $args = [], $postId = null)
     {
         if (preg_match('/^".*"$/', $field_id)) {
-            $field_id = preg_replace('/^"(.*)"$/', '$1', $field_id);
-        }
-
-        return rwmb_meta(self::maybeGenerateKey($field_id), $args, $postId);
+            return rwmb_meta(
+                preg_replace('/^"(.*)"$/', '$1', $field_id),
+                $args,
+                $postId
+            );
+        } else {
+            return rwmb_meta(self::maybeGenerateKey($field_id), $args, $postId);
     }
 
     /**
