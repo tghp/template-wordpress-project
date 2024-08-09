@@ -116,6 +116,7 @@ class Metabox extends AbstractDefinesMetabox
             'meta-box-tabs',
             'meta-box-show-hide',
             'meta-box-group',
+            'mb-admin-columns',
             'mb-settings-page',
             'mb-blocks',
             'mb-revision',
