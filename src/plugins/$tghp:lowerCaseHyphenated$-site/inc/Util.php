@@ -58,6 +58,7 @@ class Util extends Abstract$tghp:classCase$
         }
 
         $imageSrc = $image[0];
+        $imageWidth = $image[1];
 
         // Retrieve the uploads sub-directory from the full size image.
         $dirname = _wp_get_attachment_relative_path($attachmentMeta['file']);
@@ -103,7 +104,7 @@ class Util extends Abstract$tghp:classCase$
             return false;
         }
 
-        $srcset = '';
+        $srcset = "{$imageSrc} {$imageWidth}w, ";
 
         foreach ($sources as $_source) {
             $srcset .= str_replace(' ', '%20', $_source['url']) . ' ' . $_source['value'] . $_source['descriptor'] . ', ';
