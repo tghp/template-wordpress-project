@@ -79,7 +79,7 @@ class Admin extends Abstract$tghp:classCase$
      */
     public function preventWpApiCallsAndChecks()
     {
-        if (!isset($_SERVER['APP_ENV']) || $_SERVER['APP_ENV'] !== 'local') {
+        if (!defined(WP_ENV) || WP_ENV !== 'local') {
             /*
              * Disable general calls (e.g. api.wordpress.org/block-patterns/)
              */

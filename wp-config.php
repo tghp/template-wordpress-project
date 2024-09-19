@@ -94,6 +94,10 @@ if (isset($_ENV['WP_DEBUG'])) {
     define('WP_DEBUG', false);
 }
 
+/**
+ * Environment
+ */
+define('WP_ENV', $_ENV['APP_ENV'] ?? $_ENV['WP_ENV'] ?? 'production');
 
 /**
  * Security etc
