@@ -49,7 +49,7 @@ class Enqueues extends Abstract$tghp:classCase$
 
             TGHPSite()->dev->enqueueScript($developmentSrc);
         } else {
-            wp_enqueue_script(
+            wp_enqueue_script_module(
                 $handle,
                 $productionSrc,
                 [],
