@@ -1,3 +1,5 @@
+@use "abstracts/setup" as *;
+
 .site-header {
   @include max-width-element;
   @include main-padding;

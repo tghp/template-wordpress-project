@@ -1,18 +1,14 @@
-//  Abstracts
-//  ---------------------------------------------
-@import 'abstracts/abstracts';
-
-//  Layouts
-//  ---------------------------------------------
-@import 'layout/main';
-@import 'layout/navigation';
-
 //  Base
 //  ---------------------------------------------
-@import 'base/reset';
-@import 'base/default';
+@use 'base/reset';
+@use 'base/default';
+
+//  Layout
+//  ---------------------------------------------
+@use 'layout/main--critical';
+@use 'layout/site-header--critical';
+@use 'layout/navigation--critical';
 
 //  Components
 //  ---------------------------------------------
-@import 'components/site-header';
-@import 'components/site-footer';
+@use 'components/button--critical';
