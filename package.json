@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@tghp/groundwork.js": "^2.3.1",
-    "@tghp/prettier-config": "^1.1.0',
+    "@tghp/prettier-config": "^1.1.0",
     "prettier": "^3.6.2",
     "the-new-css-reset": "^1.4.1",
     "sass-mq": "^7.0.0"
