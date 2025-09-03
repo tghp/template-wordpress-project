@@ -1,3 +1,17 @@
+@use 'sass-mq/mq';
+
+// Redefine the mq mixin to avoid having to import the whole sass-mq library everywhere
+@mixin mq (
+  $from: false,
+  $until: false,
+  $and: false,
+  $media-type: all,
+) {
+  @include mq.mq($from: $from, $until: $until, $and: $and, $media-type: $media-type) {
+    @content;
+  }
+}
+
 @mixin pseudo-element-create {
   content: '';
   display: block;

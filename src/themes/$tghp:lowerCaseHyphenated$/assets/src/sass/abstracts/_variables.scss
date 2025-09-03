@@ -10,7 +10,7 @@ $size__xxxl: 1800px;
 $size__xxxxl: 2100px;
 $size__max-width: $size__xxl;
 
-$mq-breakpoints: (
+$breakpoints: (
   xxs: $size__xxs,
   xs: $size__xs,
   s: $size__s,
@@ -20,6 +20,10 @@ $mq-breakpoints: (
   xxl: $size__xxl,
   xxxl: $size__xxxl,
   max: $size__max-width,
+);
+
+@use 'sass-mq/mq' with (
+  $breakpoints: $breakpoints
 );
 
 // Other sizes
