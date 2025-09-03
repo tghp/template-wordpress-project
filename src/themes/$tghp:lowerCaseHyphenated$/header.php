@@ -4,14 +4,14 @@
 <meta charset="<?php bloginfo('charset') ?>" />
 <meta name="viewport" content="width=device-width" />
 <?php wp_head(); ?>
-<?= TGHPSite()->asset->outputCriticalCss() ?>
-<?= TGHPSite()->asset->outputDeferedNonCriticalCss() ?>
-<?= TGHPSite()->dev->outputHmrLoad() ?>
+<?= _S()->asset->outputCriticalCss() ?>
+<?= _S()->asset->outputDeferedNonCriticalCss() ?>
+<?= _S()->dev->outputHmrLoad() ?>
 </head>
 <body <?php body_class() ?>>
     <header class="site-header">
         <a href="<?php echo esc_url(home_url('/')) ?>" title="<?php echo esc_html(get_bloginfo('name')) ?>" rel="home" class="site-header__logo">
-            <?= TGHPSite()->asset->outputAsset('images/logo.svg') ?>
+            <?= _S()->asset->outputAsset('images/logo.svg') ?>
         </a>
 
         <nav class="site-header__nav">

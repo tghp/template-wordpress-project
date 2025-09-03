@@ -10,8 +10,8 @@
         </nav>
 
         <div class="site-footer__social">
-            <a href="<?= TGHPSiteMetabox()->getSingleMetafieldValueFromOptions('twitter_url') ?>"><?= __('Twitter') ?></a>
-            <a href="<?= TGHPSiteMetabox()->getSingleMetafieldValueFromOptions('linkedin_url') ?>"><?= __('LinkedIn') ?></a>
+            <a href="<?= _MB()->getSingleMetafieldValueFromOptions('twitter_url') ?>"><?= __('Twitter') ?></a>
+            <a href="<?= _MB()->getSingleMetafieldValueFromOptions('linkedin_url') ?>"><?= __('LinkedIn') ?></a>
         </div>
 
         <div class="site-footer__copyright">

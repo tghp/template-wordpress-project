@@ -59,4 +59,28 @@ function TGHPSiteMetabox()
     return TGHPSite()->metabox;
 }
 
+if (!function_exists('_S')) {
+    /**
+     * Short alias for TGHPSite() function
+     *
+     * @return \TGHP\$tghp:classCase$\$tghp:classCase$
+     */
+    function _S()
+    {
+        return TGHPSite();
+    }
+}
+
+if (!function_exists('_MB')) {
+    /**
+     * Short alias for TGHPSiteMetabox() function
+     *
+     * @return \TGHP\$tghp:classCase$\$tghp:classCase$\Metaboxio\Metabox
+     */
+    function _MB()
+    {
+        return TGHPSiteMetabox();
+    }
+}
+
 TGHP$tghp:classCase$();
