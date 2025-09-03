@@ -10,12 +10,12 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@tghp/vitepress": "^0.12.0",
+    "@tghp/vitepress": "^2",
     "dotenv-cli": "^6.0.0"
   },
   "dependencies": {
     "@tghp/groundwork.js": "^2.1.3",
     "the-new-css-reset": "^1.4.1",
-    "sass-mq": "^6.0.0"
+    "sass-mq": "^7.0.0"
   }
 }
