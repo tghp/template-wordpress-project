@@ -11,7 +11,7 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@tghp/vitepress": "2.2.0",
+    "@tghp/vitepress": "2.3.0",
     "dotenv-cli": "^6.0.0"
   },
   "dependencies": {
