@@ -146,6 +146,7 @@ class Metabox extends AbstractDefinesMetabox
             );
         } else {
             return rwmb_meta(self::maybeGenerateKey($field_id), $args, $postId);
+        }
     }
 
     /**
