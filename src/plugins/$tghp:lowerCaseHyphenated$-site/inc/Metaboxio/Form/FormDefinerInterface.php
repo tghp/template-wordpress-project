@@ -2,7 +2,7 @@
 
 namespace TGHP\$tghp:classCase$\Metaboxio\Form;
 
-user TGHP\$tghp:classCase$\DefinerInterface;
+use TGHP\$tghp:classCase$\DefinerInterface;
 
 interface FormDefinerInterface extends DefinerInterface
 {
