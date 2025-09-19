@@ -52,7 +52,7 @@ function TGHPSite()
 }
 
 /**
- * @return \TGHP\$tghp:classCase$\$tghp:classCase$\Metaboxio\Metabox
+ * @return \TGHP\$tghp:classCase$\Metaboxio\Metabox
  */
 function TGHPSiteMetabox()
 {
@@ -75,7 +75,7 @@ if (!function_exists('_MB')) {
     /**
      * Short alias for TGHPSiteMetabox() function
      *
-     * @return \TGHP\$tghp:classCase$\$tghp:classCase$\Metaboxio\Metabox
+     * @return \TGHP\$tghp:classCase$\Metaboxio\Metabox
      */
     function _MB()
     {
