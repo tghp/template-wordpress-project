@@ -62,6 +62,9 @@ class $tghp:classCase$
     /** @var Asset */
     public $asset;
 
+    /** @var Template */
+    public $template;
+
     /** @var Util */
     public $util;
 
@@ -115,6 +118,7 @@ class $tghp:classCase$
 
         // Utilities
         $this->asset = new Asset($this);
+        $this->template = new Template($this);
         $this->util = new Util($this);
 
         // Development / Workflow
